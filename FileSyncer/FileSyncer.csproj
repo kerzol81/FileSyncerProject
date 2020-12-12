@@ -136,6 +136,7 @@
     <Compile Include="Control\Helper.cs" />
     <Compile Include="Control\IListViewRow.cs" />
     <Compile Include="Control\LoggedInUser.cs" />
+    <Compile Include="Control\UserLevels.cs" />
     <Compile Include="Entity\ApplicationLogger.cs" />
     <Compile Include="Control\FTPFolderPair.cs" />
     <Compile Include="Control\SFTPFolderPair.cs" />
@@ -163,7 +164,6 @@
     <Compile Include="Entity\DBHandler.cs" />
     <Compile Include="Control\Validator.cs" />
     <Compile Include="Control\DBHandlerExeption.cs" />
-    <Compile Include="Control\UserLevels.cs" />
     <Compile Include="FileSyncerDBDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -248,6 +248,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entity\ToDo.txt" />
     <Content Include="FileSyncerDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -20,7 +20,7 @@ namespace FileSyncer.Boundary
             selectedSFTP_ID = 0;
 
             InitializeComponent();
-            ApplicationLogger.Logging_enabled = true;
+            ApplicationLogger.Logging_enabled = false;
             
             // https://www.codeproject.com/Answers/745902/Does-Csharp-timers-start-new-thread#answer2
             BackgroundWorker ftp_worker = new BackgroundWorker();                       
@@ -42,19 +42,68 @@ namespace FileSyncer.Boundary
             {
                 Application.Exit();
             }
-            SetButtonsToUserlevel();
+            SetControlsToUserLevel();
             #endregion  
             UpdateSMBLSTV();
             UpdateFTPLSTV();
             UpdateSFTPLSTV();            
         }
 
-        private void SetButtonsToUserlevel()
+        private void SetControlsToUserLevel()
         {
-            //throw new NotImplementedException();
-            if (true)
+            /*
+                UserLevels.Levels[0] => Admin
+                UserLevels.Levels[1] => Operator
+                UserLevels.Levels[2] => Viewer
+             */
+            if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[0])
             {
+                  // All Controls will be Visible, just for readability
+            }
+            if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[1])
+            {
+                HideUsermanagmentForOperator();
+            }
+            if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[2])
+            {
+                HideControlsForViewer();
+            }            
+        }
+        private void HideControlsForViewer()
+        {
+            button_saveLogs.Visible = false;
 
+            button_smb_add.Visible = false;
+            button_smb_mod.Visible = false;
+            button_smb_del.Visible = false;
+
+            button_ftp_add.Visible = false;
+            button_ftp_mod.Visible = false;
+            button_ftp_del.Visible = false;
+
+            button_sftp_add.Visible = false;
+            button_sftp_mod.Visible = false;
+            button_sftp_del.Visible = false;
+
+            usersToolStripMenuItem.Visible = false;
+        }
+        private void HideUsermanagmentForOperator()
+        {
+            userManagmentMenuItem.Visible = false;
+        }
+
+        private void syncronise_FTP_FolderPairs(object sender, DoWorkEventArgs e)
+        {
+            var minute = 1;
+            while (true)
+            {
+                foreach (var item in DynamicDataStore.FtpFolderPairs)
+                {
+                    Syncroniser.FTP(item);
+                    ApplicationLogger.AddLog($"{item.FriendlyName} synced to {item.DestinationFolder}");              
+                    System.Threading.Thread.Sleep(minute * 60 * 1000); 
+                }
+                minute = Syncroniser.Ftp_minute;
             }
         }
 
@@ -70,22 +119,7 @@ namespace FileSyncer.Boundary
                     ApplicationLogger.AddLog($"{item.FriendlyName} synced to {item.DestinationFolder}");
                     System.Threading.Thread.Sleep(minute * 60 * 1000);
                 }
-                minute = Syncroniser.SFTP_minute;
-            }
-        }
-
-        private void syncronise_FTP_FolderPairs(object sender, DoWorkEventArgs e)
-        {
-            var minute = 1;
-            while (true)
-            {
-                foreach (var item in DynamicDataStore.FtpFolderPairs)
-                {
-                    Syncroniser.FTP(item);
-                    ApplicationLogger.AddLog($"{item.FriendlyName} synced to {item.DestinationFolder}");              
-                    System.Threading.Thread.Sleep(minute * 60 * 1000); 
-                }
-                minute = Syncroniser.Ftp_minute;
+                minute = Syncroniser.Sftp_minute;
             }
         }
         #region ListView & Listbox Updates

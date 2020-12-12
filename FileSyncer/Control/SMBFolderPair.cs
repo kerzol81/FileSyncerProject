@@ -167,16 +167,18 @@ namespace FileSyncer
                         Thread.Sleep(1000);
                     }
                 }
-                ApplicationLogger.AddLog($"File Moved in {friendlyName}");
+                ApplicationLogger.AddLog($"{friendlyName} synced");
+                //ApplicationLogger.AddLog($"{e.Name} Moved in {friendlyName}");
             }
             else if (validTime && enabled && deleteSourceFiles == false)
             {
                 File.Copy(e.FullPath, Path.Combine(destinationFolder, e.Name));
-                ApplicationLogger.AddLog($"File Copied {friendlyName}");
+                ApplicationLogger.AddLog($"{friendlyName} synced");
+                //ApplicationLogger.AddLog($"File Copied {friendlyName}");
             }
             else
             {
-                ApplicationLogger.AddLog($"Out of Time: File created in {friendlyName}");
+                ApplicationLogger.AddLog($"Out of Time: {e.Name} was created in {friendlyName} {sourceFolder}");
             }
         }
         #endregion

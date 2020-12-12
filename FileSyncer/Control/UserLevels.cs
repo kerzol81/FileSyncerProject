@@ -1,8 +1,9 @@
 ﻿
+
 namespace FileSyncer.Control
 {
     sealed class UserLevels
-    {  
+    {
         public static string[] Levels
         {
             get

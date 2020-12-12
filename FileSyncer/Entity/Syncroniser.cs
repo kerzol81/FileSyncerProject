@@ -12,7 +12,7 @@ namespace FileSyncer.Entity
         private static int sftp_minute = 1;
 
         internal static int Ftp_minute { get => ftp_minute; set => ftp_minute = value; }
-        public static int SFTP_minute { get => sftp_minute; set => sftp_minute = value; }
+        public static int Sftp_minute { get => sftp_minute; set => sftp_minute = value; }
 
         static internal async void FTP(FTPFolderPair f)
         {
