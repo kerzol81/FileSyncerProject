@@ -57,7 +57,7 @@
             this.button_mod.BackColor = System.Drawing.Color.White;
             this.button_mod.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_mod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_mod.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.button_mod.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button_mod.Location = new System.Drawing.Point(225, 58);
             this.button_mod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_mod.Name = "button_mod";

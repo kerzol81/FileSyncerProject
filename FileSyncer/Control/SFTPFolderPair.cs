@@ -156,6 +156,10 @@ namespace FileSyncer.Control
         #endregion
 
         #region Constructors
+        public SFTPFolderPair()
+        {
+            // Exporter.cs and Dapper needs a parameterless constructor
+        }
         public SFTPFolderPair(string friendlyName, string iP, int port, string userName, string passWord, string sharedFolder, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled)
         {
           

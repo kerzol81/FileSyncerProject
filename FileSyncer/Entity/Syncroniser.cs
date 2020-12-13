@@ -80,7 +80,6 @@ namespace FileSyncer.Entity
                 }
                 catch (SessionException ex)
                 {
-                    //throw;
                     if (ex.ToString().Contains("Authentication failed"))
                     {
                         ApplicationLogger.AddLog($"{f.FriendlyName} authentication error\n {ex}");

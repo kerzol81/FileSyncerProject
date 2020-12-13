@@ -122,7 +122,7 @@
             // 
             this.closeToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(104, 26);
             this.closeToolStripMenuItem.Text = "Exit";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.closeToolStripMenuItem_Click);
             // 
@@ -154,6 +154,7 @@
             this.cSVExportFolderPairsToolStripMenuItem.Name = "cSVExportFolderPairsToolStripMenuItem";
             this.cSVExportFolderPairsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.cSVExportFolderPairsToolStripMenuItem.Text = "CSV Export FolderPairs";
+            this.cSVExportFolderPairsToolStripMenuItem.Click += new System.EventHandler(this.cSVExportFolderPairsToolStripMenuItem_Click);
             // 
             // cSVExportUsersToolStripMenuItem
             // 
@@ -252,7 +253,7 @@
             // 
             this.button_smb_mod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button_smb_mod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_smb_mod.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.button_smb_mod.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button_smb_mod.Location = new System.Drawing.Point(212, 60);
             this.button_smb_mod.Name = "button_smb_mod";
             this.button_smb_mod.Size = new System.Drawing.Size(57, 30);
@@ -324,7 +325,7 @@
             // 
             this.button_ftp_mod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button_ftp_mod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_ftp_mod.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.button_ftp_mod.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button_ftp_mod.Location = new System.Drawing.Point(212, 281);
             this.button_ftp_mod.Name = "button_ftp_mod";
             this.button_ftp_mod.Size = new System.Drawing.Size(57, 30);
@@ -363,7 +364,7 @@
             // 
             this.button_sftp_mod.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button_sftp_mod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_sftp_mod.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.button_sftp_mod.ForeColor = System.Drawing.Color.RoyalBlue;
             this.button_sftp_mod.Location = new System.Drawing.Point(210, 493);
             this.button_sftp_mod.Name = "button_sftp_mod";
             this.button_sftp_mod.Size = new System.Drawing.Size(57, 30);

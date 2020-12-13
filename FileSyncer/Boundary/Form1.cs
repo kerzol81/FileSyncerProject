@@ -15,13 +15,15 @@ namespace FileSyncer.Boundary
 
         public Form1()
         {          
+            InitializeComponent();
+            
             selectedSMB_ID = 0;
             selectedFTP_ID = 0;
             selectedSFTP_ID = 0;
 
-            InitializeComponent();
-            ApplicationLogger.Logging_enabled = false;
+            ApplicationLogger.Logging_enabled = true;
             
+
             // https://www.codeproject.com/Answers/745902/Does-Csharp-timers-start-new-thread#answer2
             BackgroundWorker ftp_worker = new BackgroundWorker();                       
             ftp_worker.DoWork += new DoWorkEventHandler(syncronise_FTP_FolderPairs);
@@ -189,8 +191,7 @@ namespace FileSyncer.Boundary
         }
         private void cSVExportUsersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var users = DBHandler.LoadUsers();
-            GenericCSVHandler<User>.WriteWithHeaders(users, @"users.csv");
+            Exporter.Users();
         }
 
         private void syslogServerSettingsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -342,12 +343,7 @@ namespace FileSyncer.Boundary
 
         private void button_saveLogs_Click(object sender, EventArgs e)
         {
-            var fbd = new FolderBrowserDialog();
-            fbd.Description = "Save logs to:";
-            if (fbd.ShowDialog() == DialogResult.OK)
-            {
-                LogWriter.WriteLogs(Path.Combine(fbd.SelectedPath, $"FileSyncerLog_{DateTime.Now.ToString("yyyy-MM-dd__HH_mm_ss")}.txt"));
-            }    
+            Exporter.Logs();
         }
         #endregion
 
@@ -361,7 +357,8 @@ namespace FileSyncer.Boundary
             var frm = new FrequencyFRM();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                ApplicationLogger.AddLog($"FTP syncronisation set to: {frm.FTPMinute} min");
+                ApplicationLogger.AddLog($"FTP syncronisation set to: {frm.FTPMinute} min"); 
+                ApplicationLogger.AddLog($"SFTP syncronisation set to: {frm.SFTP_minute} min");
             }
         }
 
@@ -410,6 +407,11 @@ namespace FileSyncer.Boundary
                     UpdateSFTPLSTV();
                 }
             }
+        }
+
+        private void cSVExportFolderPairsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Exporter.FolderPairs();
         }
     }
 }

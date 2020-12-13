@@ -1,6 +1,8 @@
 ﻿13-12-2020
 Check CSV Exports
 SFTP sync settings bug
+SMB inBetweenTime bug
+Colorise all buttons to RoyalBlue
 
 12-12-2020
 Implement UserLevels -> Controls Visible according to level

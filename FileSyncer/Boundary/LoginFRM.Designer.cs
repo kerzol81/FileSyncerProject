@@ -79,7 +79,7 @@ namespace FileSyncer.Boundary
             // 
             // button_login
             // 
-            this.button_login.BackColor = System.Drawing.Color.DarkCyan;
+            this.button_login.BackColor = System.Drawing.Color.RoyalBlue;
             this.button_login.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_login.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_login.ForeColor = System.Drawing.Color.White;

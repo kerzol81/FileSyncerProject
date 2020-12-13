@@ -99,10 +99,8 @@ namespace FileSyncer
         #region Constructors
         public SMBFolderPair()
         {
-            // Dapper needs this
-
+            // Dapper needs a parameterless constructor
         }
-
         // DB read to Dynamic Data Store
         public SMBFolderPair(int? id, string friendlyName, string sourceFolder, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled)
         {
@@ -147,8 +145,9 @@ namespace FileSyncer
         {
             ApplicationLogger.AddLog($"{e.Name} created in {friendlyName}");
             Thread.Sleep(200);
-            bool validTime = startSync < DateTime.Now && DateTime.Now < stopSync;
-            if (validTime && enabled && deleteSourceFiles is true)
+            //bool validTime = startSync < DateTime.Now && DateTime.Now < stopSync;
+            bool inBetweenSyncBoundary = startSync < DateTime.Now && stopSync > DateTime.Now;
+            if (inBetweenSyncBoundary && enabled && deleteSourceFiles is true)
             {
                 //File.Move(e.FullPath, Path.Combine(destinationFolder, e.Name));
                 // Sophisticated way than simple copy - if network loss
@@ -170,7 +169,7 @@ namespace FileSyncer
                 ApplicationLogger.AddLog($"{friendlyName} synced");
                 //ApplicationLogger.AddLog($"{e.Name} Moved in {friendlyName}");
             }
-            else if (validTime && enabled && deleteSourceFiles == false)
+            else if (inBetweenSyncBoundary && enabled && deleteSourceFiles == false)
             {
                 File.Copy(e.FullPath, Path.Combine(destinationFolder, e.Name));
                 ApplicationLogger.AddLog($"{friendlyName} synced");
@@ -192,25 +191,13 @@ namespace FileSyncer
             string status = enabled ? "enabled" : "disabled";
             return $"{friendlyName} - {sourceFolder} - {destinationFolder} - {StartSync} - {StopSync} - {status}";
         }
-        // entity class..
-        // task queue, test if empty before exit the app
-        // 
-
-        /*
-        public void Syncronise(object sender, FileSystemEventArgs e)
-        {
-            // when a file arrives , an event is triggered, then copy, sha, delete source if it was set true
-            // copy was solved with FluentFTP NuGet package, which does all the necessary validations regarding to partial downloads
-            Logger.AddLog($"File created in {sourceFolder}");
-        }
-        */
         public string CSVFormat()
         {
-            return $"{id};{friendlyName};{sourceFolder};{destinationFolder};{added};{startSync};{stopSync};{enabled};{deleteSourceFiles}";
+            return $"{id};{friendlyName};{sourceFolder};{destinationFolder};{added};{startSync};{stopSync};{deleteSourceFiles};{enabled}";
         }
         public string[] ListViewRow()
         {
-            string[] array = { id.ToString(), friendlyName, sourceFolder, destinationFolder, added.ToString(), startSync.ToString(), stopSync.ToString(), enabled.ToString(), deleteSourceFiles.ToString() };
+            string[] array = { id.ToString(), friendlyName, sourceFolder, destinationFolder, added.ToString(), startSync.ToString(), stopSync.ToString(), deleteSourceFiles.ToString(), enabled.ToString() };
             return array;
         }
         #endregion

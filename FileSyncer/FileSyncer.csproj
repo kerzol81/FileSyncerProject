@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Control\DynamicDataStore.cs" />
     <Compile Include="Control\Xor.cs" />
+    <Compile Include="Entity\Exporter.cs" />
     <Compile Include="Entity\Syncroniser.cs" />
     <Compile Include="Entity\LogWriter.cs" />
     <Compile Include="Entity\GenericCSVHandler.cs" />

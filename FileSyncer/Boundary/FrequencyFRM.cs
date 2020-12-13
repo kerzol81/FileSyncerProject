@@ -7,15 +7,14 @@ namespace FileSyncer.Boundary
     public partial class FrequencyFRM : Form
     {
         private int ftp_minute;
-        private int tftp_minute;
+        private int sftp_minute;
         internal int FTPMinute { get => ftp_minute; }
-        public int TFTP_minute { get => tftp_minute; }
+        public int SFTP_minute { get => sftp_minute; }
 
         public FrequencyFRM()
         {
             InitializeComponent();
         }
-
         private void FrequencyFRM_Load(object sender, EventArgs e)
         {
             numericUpDown_ftp.Value = Syncroniser.Ftp_minute;
@@ -26,7 +25,7 @@ namespace FileSyncer.Boundary
             ftp_minute = (int)numericUpDown_ftp.Value;
             Syncroniser.Ftp_minute = (int)numericUpDown_ftp.Value;
 
-            tftp_minute = (int)numericUpDown_rsync.Value;
+            sftp_minute = (int)numericUpDown_rsync.Value;
             Syncroniser.Sftp_minute = (int)numericUpDown_rsync.Value;
         }        
     }

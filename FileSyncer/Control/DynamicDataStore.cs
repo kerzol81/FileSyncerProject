@@ -28,7 +28,7 @@ namespace FileSyncer.Control
                 SmbFolderPairs.Clear();
             }
             SmbFolderPairs = DBHandler.LoadSMBFolderPairs();
-            ApplicationLogger.AddLog("SMB FolderPairs loaded to DynamicDataStore");
+            //ApplicationLogger.AddLog("SMB FolderPairs loaded to DynamicDataStore");
         }
         internal static void LoadFTPFolderPairs()
         {
@@ -37,13 +37,13 @@ namespace FileSyncer.Control
                 FtpFolderPairs.Clear();
             }
             FtpFolderPairs = DBHandler.LoadFTPFolderPairs();
-            ApplicationLogger.AddLog("FTP FolderPairs loaded to DynamicDataStore");
+            //ApplicationLogger.AddLog("FTP FolderPairs loaded to DynamicDataStore");
         }
         internal static void LoadSFTPFolderPairs()
         {
             //throw new NotImplementedException();
             SftpFolderPairs = DBHandler.LoadSFTPFolderPairs();
-            ApplicationLogger.AddLog("SFTP FolderPairs loaded to DynamicDataStore");
+            //ApplicationLogger.AddLog("SFTP FolderPairs loaded to DynamicDataStore");
         }
         internal static void LoadUsers()
         {
@@ -52,7 +52,7 @@ namespace FileSyncer.Control
                 Users.Clear();
             }
             Users = DBHandler.LoadUsers();
-            ApplicationLogger.AddLog("UserList loaded to DynamicDataStore");
+            //ApplicationLogger.AddLog("UserList loaded to DynamicDataStore");
         }
     }
 }
