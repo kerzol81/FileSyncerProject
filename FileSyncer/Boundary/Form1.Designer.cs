@@ -86,11 +86,10 @@
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader11 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.updateLogs = new System.Windows.Forms.Timer(this.components);
             this.button_clearLogs = new System.Windows.Forms.Button();
             this.button_saveLogs = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.timer_Logs = new System.Windows.Forms.Timer(this.components);
+            this.timer_AppLogs = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -144,7 +143,7 @@
             // 
             this.userManagmentMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.userManagmentMenuItem.Name = "userManagmentMenuItem";
-            this.userManagmentMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.userManagmentMenuItem.Size = new System.Drawing.Size(241, 26);
             this.userManagmentMenuItem.Text = "User Managment";
             this.userManagmentMenuItem.Click += new System.EventHandler(this.userManagmentMenuItem_Click);
             // 
@@ -152,7 +151,7 @@
             // 
             this.cSVExportFolderPairsToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cSVExportFolderPairsToolStripMenuItem.Name = "cSVExportFolderPairsToolStripMenuItem";
-            this.cSVExportFolderPairsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.cSVExportFolderPairsToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.cSVExportFolderPairsToolStripMenuItem.Text = "CSV Export FolderPairs";
             this.cSVExportFolderPairsToolStripMenuItem.Click += new System.EventHandler(this.cSVExportFolderPairsToolStripMenuItem_Click);
             // 
@@ -160,7 +159,7 @@
             // 
             this.cSVExportUsersToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cSVExportUsersToolStripMenuItem.Name = "cSVExportUsersToolStripMenuItem";
-            this.cSVExportUsersToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.cSVExportUsersToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.cSVExportUsersToolStripMenuItem.Text = "CSV Export Users";
             this.cSVExportUsersToolStripMenuItem.Click += new System.EventHandler(this.cSVExportUsersToolStripMenuItem_Click);
             // 
@@ -168,7 +167,7 @@
             // 
             this.syslogServerSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.syslogServerSettingsToolStripMenuItem.Name = "syslogServerSettingsToolStripMenuItem";
-            this.syslogServerSettingsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.syslogServerSettingsToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
             this.syslogServerSettingsToolStripMenuItem.Text = "Syslog Server Settings";
             this.syslogServerSettingsToolStripMenuItem.Click += new System.EventHandler(this.syslogServerSettingsToolStripMenuItem_Click);
             // 
@@ -176,12 +175,15 @@
             // 
             this.fTPSyncroniseFrequencyToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.fTPSyncroniseFrequencyToolStripMenuItem.Name = "fTPSyncroniseFrequencyToolStripMenuItem";
-            this.fTPSyncroniseFrequencyToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.fTPSyncroniseFrequencyToolStripMenuItem.Text = "FTP & SFTP Sync Delays";
+            this.fTPSyncroniseFrequencyToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.fTPSyncroniseFrequencyToolStripMenuItem.Text = "FTP / SFTP HeartBeaths";
             this.fTPSyncroniseFrequencyToolStripMenuItem.Click += new System.EventHandler(this.fTPSyncroniseFrequencyToolStripMenuItem_Click);
             // 
             // listBox_logs
             // 
+            this.listBox_logs.BackColor = System.Drawing.Color.White;
+            this.listBox_logs.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBox_logs.ForeColor = System.Drawing.Color.MidnightBlue;
             this.listBox_logs.FormattingEnabled = true;
             this.listBox_logs.ItemHeight = 17;
             this.listBox_logs.Location = new System.Drawing.Point(985, 100);
@@ -536,11 +538,6 @@
             // 
             this.columnHeader11.Text = "Enabled";
             // 
-            // updateLogs
-            // 
-            this.updateLogs.Enabled = true;
-            this.updateLogs.Interval = 1000;
-            // 
             // button_clearLogs
             // 
             this.button_clearLogs.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -578,11 +575,11 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Application Logs :";
             // 
-            // timer_Logs
+            // timer_AppLogs
             // 
-            this.timer_Logs.Enabled = true;
-            this.timer_Logs.Interval = 1000;
-            this.timer_Logs.Tick += new System.EventHandler(this.timer_Logs_Tick);
+            this.timer_AppLogs.Enabled = true;
+            this.timer_AppLogs.Interval = 200;
+            this.timer_AppLogs.Tick += new System.EventHandler(this.timer_Logs_Tick);
             // 
             // Form1
             // 
@@ -652,7 +649,6 @@
         private System.Windows.Forms.Button button_sftp_add;
         private System.Windows.Forms.ListView LSTV_ftp;
         private System.Windows.Forms.ListView LSTV_sftp;
-        private System.Windows.Forms.Timer updateLogs;
         private System.Windows.Forms.Button button_clearLogs;
         private System.Windows.Forms.Button button_saveLogs;
         private System.Windows.Forms.Label label1;
@@ -665,7 +661,7 @@
         private System.Windows.Forms.ColumnHeader smb_stopSync;
         private System.Windows.Forms.ColumnHeader smb_deleteSource;
         private System.Windows.Forms.ColumnHeader smb_enabled;
-        private System.Windows.Forms.Timer timer_Logs;
+        private System.Windows.Forms.Timer timer_AppLogs;
         private System.Windows.Forms.ColumnHeader ftp_id;
         private System.Windows.Forms.ColumnHeader ftp_FriendlyName;
         private System.Windows.Forms.ColumnHeader ftp_ip;

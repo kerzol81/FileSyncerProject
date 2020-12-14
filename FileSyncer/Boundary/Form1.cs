@@ -4,6 +4,8 @@ using System;
 using System.Windows.Forms;
 using System.IO;
 using System.ComponentModel;
+using System.Threading;
+using System.Drawing;
 
 namespace FileSyncer.Boundary
 {
@@ -23,16 +25,11 @@ namespace FileSyncer.Boundary
 
             ApplicationLogger.Logging_enabled = true;
             
-
-            // https://www.codeproject.com/Answers/745902/Does-Csharp-timers-start-new-thread#answer2
-            BackgroundWorker ftp_worker = new BackgroundWorker();                       
-            ftp_worker.DoWork += new DoWorkEventHandler(syncronise_FTP_FolderPairs);
-            ftp_worker.RunWorkerAsync();
-
-            BackgroundWorker sftp_worker = new BackgroundWorker();
-            sftp_worker.DoWork += new DoWorkEventHandler(syncronise_SFTP_FolderPairs);
-            sftp_worker.RunWorkerAsync();
+                  
         }
+
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
@@ -44,13 +41,25 @@ namespace FileSyncer.Boundary
             {
                 Application.Exit();
             }
-            SetControlsToUserLevel();
+            else
+            {
+                SetControlsToUserLevel();
+            }         
             #endregion  
             UpdateSMBLSTV();
             UpdateFTPLSTV();
-            UpdateSFTPLSTV();            
-        }
+            UpdateSFTPLSTV();
 
+            // https://www.codeproject.com/Answers/745902/Does-Csharp-timers-start-new-thread#answer2
+            BackgroundWorker ftp_worker = new BackgroundWorker();
+            ftp_worker.DoWork += new DoWorkEventHandler(syncronise_FTP_FolderPairs);
+            ftp_worker.RunWorkerAsync();
+
+            BackgroundWorker sftp_worker = new BackgroundWorker();
+            sftp_worker.DoWork += new DoWorkEventHandler(syncronise_SFTP_FolderPairs);
+            sftp_worker.RunWorkerAsync();
+
+        }
         private void SetControlsToUserLevel()
         {
             /*
@@ -60,7 +69,7 @@ namespace FileSyncer.Boundary
              */
             if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[0])
             {
-                  // All Controls will be Visible, just for readability
+                  // All Controls will be visible, its just for readability
             }
             if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[1])
             {
@@ -173,7 +182,7 @@ namespace FileSyncer.Boundary
             }
             Helper.ResizeListViewColumns(LSTV_sftp);
         }
-        private void UpdateLogsLSTBX()
+        private void UpdateAppLogsLSTBX()
         {
             listBox_logs.DataSource = null;
             listBox_logs.DataSource = ApplicationLogger.Logs;
@@ -338,7 +347,7 @@ namespace FileSyncer.Boundary
         private void button_clearLogs_Click(object sender, EventArgs e)
         {
             ApplicationLogger.Logs.Clear();
-            UpdateLogsLSTBX();
+            UpdateAppLogsLSTBX();
         }
 
         private void button_saveLogs_Click(object sender, EventArgs e)
@@ -349,7 +358,7 @@ namespace FileSyncer.Boundary
 
         private void timer_Logs_Tick(object sender, EventArgs e)
         {
-            UpdateLogsLSTBX();
+            UpdateAppLogsLSTBX();
         }
 
         private void fTPSyncroniseFrequencyToolStripMenuItem_Click(object sender, EventArgs e)
@@ -412,6 +421,11 @@ namespace FileSyncer.Boundary
         private void cSVExportFolderPairsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exporter.FolderPairs();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            UpdateAppLogsLSTBX();
         }
     }
 }

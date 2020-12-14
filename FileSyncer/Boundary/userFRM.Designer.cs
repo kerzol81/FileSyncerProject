@@ -178,6 +178,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "userFRM";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "User Settings";
             this.Load += new System.EventHandler(this.userFRM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userLevelsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dynamicDataStoreBindingSource)).EndInit();

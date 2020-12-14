@@ -1,5 +1,4 @@
-﻿// Code was inspired by Tim Corey's YouTube Generics tutorial
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -7,6 +6,7 @@ using System.Text;
 
 namespace FileSyncer.Entity
 {
+    // Code was inspired by Tim Corey's YouTube Generics tutorial
     static class GenericCSVHandler<T> where T : ICSVFormat, new()
     {
         public static void WriteWithHeaders(List<T> items, string path)

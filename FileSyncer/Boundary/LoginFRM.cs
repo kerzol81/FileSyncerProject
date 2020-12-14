@@ -6,8 +6,6 @@ namespace FileSyncer.Boundary
 {
     public partial class LoginFRM : Form
     {
-        
-
         public LoginFRM()
         {
             InitializeComponent();
@@ -27,7 +25,7 @@ namespace FileSyncer.Boundary
                     DialogResult = DialogResult.None;
                 }
                 else
-                {
+                {            
                     DynamicDataStore.LoggedInUser = user;
                     DialogResult = DialogResult.OK;   
                 }
@@ -36,8 +34,7 @@ namespace FileSyncer.Boundary
             {
                 StandardMessages.ShowMessageBox_MissingLoginCredentials();
                 DialogResult = DialogResult.None;
-            }
-            
+            }         
         }
     }
 }

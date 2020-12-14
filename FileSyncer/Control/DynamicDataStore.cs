@@ -1,5 +1,4 @@
-﻿using FileSyncer.Entity;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace FileSyncer.Control
 {
