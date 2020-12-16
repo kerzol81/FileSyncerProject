@@ -168,5 +168,31 @@ namespace FileSyncer.Boundary
         {
             checkBox_enabled.Checked = true;
         }
+
+        private void textBox_destination_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in DynamicDataStore.FtpFolderPairs)
+            {
+                if (item.DestinationFolder == textBox_destination.Text)
+                {
+                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
+                    textBox_destination.Clear();
+                    DialogResult = DialogResult.None;
+                }
+            }
+        }
+
+        private void textBox_shared_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in DynamicDataStore.FtpFolderPairs)
+            {
+                if (item.SharedFolder == textBox_shared.Text)
+                {
+                    StandardMessages.ShowMessageBox_SourceSharedFolderIsAlreadyUsed(item.Id.ToString());
+                    textBox_shared.Clear();
+                    DialogResult = DialogResult.None;
+                }
+            }
+        }
     }
 }

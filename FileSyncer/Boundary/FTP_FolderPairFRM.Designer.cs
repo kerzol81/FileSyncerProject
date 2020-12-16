@@ -106,6 +106,7 @@
             this.textBox_destination.Name = "textBox_destination";
             this.textBox_destination.Size = new System.Drawing.Size(233, 25);
             this.textBox_destination.TabIndex = 15;
+            this.textBox_destination.TextChanged += new System.EventHandler(this.textBox_destination_TextChanged);
             // 
             // button_destination
             // 
@@ -333,6 +334,7 @@
             this.textBox_shared.TabIndex = 3;
             this.textBox_shared.Text = "SharedFolder";
             this.textBox_shared.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox_shared_MouseClick);
+            this.textBox_shared.TextChanged += new System.EventHandler(this.textBox_shared_TextChanged);
             // 
             // FTP_FolderPairFRM
             // 

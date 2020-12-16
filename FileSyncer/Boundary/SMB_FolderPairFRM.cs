@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using FileSyncer.Control;
 
 namespace FileSyncer.Boundary
 {
@@ -34,6 +35,8 @@ namespace FileSyncer.Boundary
         }
         private void button_ok_Click(object sender, EventArgs e)
         {
+            
+
             if (!string.IsNullOrEmpty(textBox_friendlyName.Text) && 
                 !string.IsNullOrEmpty(textBox_source.Text) && 
                 !string.IsNullOrEmpty(textBox_destination.Text) && 
@@ -85,6 +88,31 @@ namespace FileSyncer.Boundary
             if (folderBD_destination.ShowDialog() == DialogResult.OK)
             {
                 textBox_destination.Text = folderBD_destination.SelectedPath;
+            }
+        }
+        private void textBox_source_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in DynamicDataStore.SmbFolderPairs)
+            {
+                if (item.SourceFolder == textBox_source.Text)
+                {
+                    StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
+                    textBox_source.Clear();
+                    DialogResult = DialogResult.None;
+                }     
+            }
+        }
+
+        private void textBox_destination_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in DynamicDataStore.SmbFolderPairs)
+            {
+                if (item.DestinationFolder == textBox_destination.Text)
+                {
+                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
+                    textBox_destination.Clear();
+                    DialogResult = DialogResult.None;
+                }
             }
         }
     }

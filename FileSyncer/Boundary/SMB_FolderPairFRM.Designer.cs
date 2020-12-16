@@ -171,6 +171,7 @@
             this.textBox_source.Name = "textBox_source";
             this.textBox_source.Size = new System.Drawing.Size(233, 25);
             this.textBox_source.TabIndex = 12;
+            this.textBox_source.TextChanged += new System.EventHandler(this.textBox_source_TextChanged);
             // 
             // textBox_destination
             // 
@@ -180,6 +181,7 @@
             this.textBox_destination.Name = "textBox_destination";
             this.textBox_destination.Size = new System.Drawing.Size(233, 25);
             this.textBox_destination.TabIndex = 13;
+            this.textBox_destination.TextChanged += new System.EventHandler(this.textBox_destination_TextChanged);
             // 
             // dateTimePicker_start
             // 

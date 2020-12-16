@@ -214,5 +214,30 @@ namespace FileSyncer.Boundary
             textBox_friendlyName.Focus();
             checkBox_enabled.Checked = true;
         }
+
+        private void textBox_remotedir_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in DynamicDataStore.SftpFolderPairs)
+            {
+                if (item.DestinationFolder == textBox_destination.Text)
+                {
+                    StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
+                    textBox_remotedir.Clear();
+                    DialogResult = DialogResult.None;
+                }
+            }
+        }
+        private void textBox_destination_TextChanged(object sender, EventArgs e)
+        {
+            foreach (var item in DynamicDataStore.SftpFolderPairs)
+            {
+                if (item.DestinationFolder == textBox_destination.Text)
+                {
+                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
+                    textBox_destination.Clear();
+                    DialogResult = DialogResult.None;
+                }
+            }
+        }
     }
 }

@@ -23,9 +23,7 @@ namespace FileSyncer.Boundary
             selectedFTP_ID = 0;
             selectedSFTP_ID = 0;
 
-            ApplicationLogger.Logging_enabled = true;
-            
-                  
+            ApplicationLogger.Logging_enabled = true;               
         }
 
         
@@ -44,6 +42,18 @@ namespace FileSyncer.Boundary
             else
             {
                 SetControlsToUserLevel();
+                label_logged_in_username.Text =  DynamicDataStore.LoggedInUser.UserName;
+                if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[0])
+                {
+                    label_logged_in_username.ForeColor = Color.Red;
+                }
+                else
+                {
+                    label_logged_in_username.ForeColor = Color.Green;
+                }
+                label_logged_in_userLevel.Text = DynamicDataStore.LoggedInUser.UserLevel;
+                
+                
             }         
             #endregion  
             UpdateSMBLSTV();

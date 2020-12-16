@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace FileSyncer.Boundary
 {
@@ -73,6 +74,24 @@ namespace FileSyncer.Boundary
         internal static DialogResult ShowMessageBox_ZeroUserSelection()
         {
             return MessageBox.Show($"Select a User!", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        internal static void ShowMessageBox_SourceFolderIsAlreadyUsed(string id)
+        {
+            //throw new NotImplementedException();
+            MessageBox.Show($"The Source Folder is already used in \nID:{id}", "Source Folder Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal static void ShowMessageBox_DestinationFolderIsAlreadyUsed(string id)
+        {
+            //throw new NotImplementedException();
+            MessageBox.Show($"The Destination Folder is already used in \nID:{id}", "Destination Folder Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        internal static void ShowMessageBox_SourceSharedFolderIsAlreadyUsed(string id)
+        {
+            //throw new NotImplementedException();
+            MessageBox.Show($"The Source Shared Folder is already used in \nID:{id}", "Source Shared Folder Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         #endregion
 

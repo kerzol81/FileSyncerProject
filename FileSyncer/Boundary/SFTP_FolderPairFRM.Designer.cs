@@ -194,6 +194,7 @@
             this.textBox_destination.Name = "textBox_destination";
             this.textBox_destination.Size = new System.Drawing.Size(175, 25);
             this.textBox_destination.TabIndex = 9;
+            this.textBox_destination.TextChanged += new System.EventHandler(this.textBox_destination_TextChanged);
             // 
             // button_destination
             // 
@@ -313,6 +314,7 @@
             this.textBox_remotedir.Name = "textBox_remotedir";
             this.textBox_remotedir.Size = new System.Drawing.Size(120, 25);
             this.textBox_remotedir.TabIndex = 6;
+            this.textBox_remotedir.TextChanged += new System.EventHandler(this.textBox_remotedir_TextChanged);
             // 
             // label_remotedir
             // 

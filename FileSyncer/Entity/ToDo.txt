@@ -1,27 +1,2 @@
-﻿13-12-2020
-Check CSV Exports
-SFTP sync settings bug
-SMB inBetweenTime bug
-Colorise all buttons to RoyalBlue
-
-12-12-2020
-Implement UserLevels -> Controls Visible according to level
-Syslog Server implementation
-Send function
-
-11-12-2020
-seal User and UserLevels classes
-Refactor StandardMessages
-Recolor all UI fonts
-Remove sha256hash from User Class
-Refactor Helper.cs
-
-10-12-2020
-
-SFTP sync implementation with WinSCP
-SFTP Login test
-SFTP form tabs
-
-09-12-2020
-Check SMB, FTP mod DateTime.Now
-SFT CRUDS
+﻿user level display
+source / destination folder duplicati

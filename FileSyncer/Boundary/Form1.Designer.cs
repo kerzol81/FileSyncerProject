@@ -90,7 +90,11 @@
             this.button_saveLogs = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.timer_AppLogs = new System.Windows.Forms.Timer(this.components);
+            this.label_logged_in_username = new System.Windows.Forms.Label();
+            this.LoggedIn_GBX = new System.Windows.Forms.GroupBox();
+            this.label_logged_in_userLevel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.LoggedIn_GBX.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -581,12 +585,42 @@
             this.timer_AppLogs.Interval = 200;
             this.timer_AppLogs.Tick += new System.EventHandler(this.timer_Logs_Tick);
             // 
+            // label_logged_in_username
+            // 
+            this.label_logged_in_username.AutoSize = true;
+            this.label_logged_in_username.Location = new System.Drawing.Point(86, 21);
+            this.label_logged_in_username.Name = "label_logged_in_username";
+            this.label_logged_in_username.Size = new System.Drawing.Size(71, 19);
+            this.label_logged_in_username.TabIndex = 22;
+            this.label_logged_in_username.Text = "Username";
+            // 
+            // LoggedIn_GBX
+            // 
+            this.LoggedIn_GBX.Controls.Add(this.label_logged_in_userLevel);
+            this.LoggedIn_GBX.Controls.Add(this.label_logged_in_username);
+            this.LoggedIn_GBX.Location = new System.Drawing.Point(614, 36);
+            this.LoggedIn_GBX.Name = "LoggedIn_GBX";
+            this.LoggedIn_GBX.Size = new System.Drawing.Size(350, 54);
+            this.LoggedIn_GBX.TabIndex = 23;
+            this.LoggedIn_GBX.TabStop = false;
+            this.LoggedIn_GBX.Text = "Logged In User - Level";
+            // 
+            // label_logged_in_userLevel
+            // 
+            this.label_logged_in_userLevel.AutoSize = true;
+            this.label_logged_in_userLevel.Location = new System.Drawing.Point(215, 21);
+            this.label_logged_in_userLevel.Name = "label_logged_in_userLevel";
+            this.label_logged_in_userLevel.Size = new System.Drawing.Size(40, 19);
+            this.label_logged_in_userLevel.TabIndex = 24;
+            this.label_logged_in_userLevel.Text = "Level";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1584, 721);
+            this.Controls.Add(this.LoggedIn_GBX);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_saveLogs);
             this.Controls.Add(this.button_clearLogs);
@@ -618,6 +652,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.LoggedIn_GBX.ResumeLayout(false);
+            this.LoggedIn_GBX.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -685,6 +721,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader9;
         private System.Windows.Forms.ColumnHeader columnHeader10;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.Label label_logged_in_username;
+        private System.Windows.Forms.GroupBox LoggedIn_GBX;
+        private System.Windows.Forms.Label label_logged_in_userLevel;
     }
 }
 
