@@ -147,7 +147,7 @@
             // 
             this.userManagmentMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.userManagmentMenuItem.Name = "userManagmentMenuItem";
-            this.userManagmentMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.userManagmentMenuItem.Size = new System.Drawing.Size(238, 26);
             this.userManagmentMenuItem.Text = "User Managment";
             this.userManagmentMenuItem.Click += new System.EventHandler(this.userManagmentMenuItem_Click);
             // 
@@ -155,7 +155,7 @@
             // 
             this.cSVExportFolderPairsToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cSVExportFolderPairsToolStripMenuItem.Name = "cSVExportFolderPairsToolStripMenuItem";
-            this.cSVExportFolderPairsToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.cSVExportFolderPairsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.cSVExportFolderPairsToolStripMenuItem.Text = "CSV Export FolderPairs";
             this.cSVExportFolderPairsToolStripMenuItem.Click += new System.EventHandler(this.cSVExportFolderPairsToolStripMenuItem_Click);
             // 
@@ -163,7 +163,7 @@
             // 
             this.cSVExportUsersToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.cSVExportUsersToolStripMenuItem.Name = "cSVExportUsersToolStripMenuItem";
-            this.cSVExportUsersToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.cSVExportUsersToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.cSVExportUsersToolStripMenuItem.Text = "CSV Export Users";
             this.cSVExportUsersToolStripMenuItem.Click += new System.EventHandler(this.cSVExportUsersToolStripMenuItem_Click);
             // 
@@ -171,7 +171,7 @@
             // 
             this.syslogServerSettingsToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.syslogServerSettingsToolStripMenuItem.Name = "syslogServerSettingsToolStripMenuItem";
-            this.syslogServerSettingsToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
+            this.syslogServerSettingsToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
             this.syslogServerSettingsToolStripMenuItem.Text = "Syslog Server Settings";
             this.syslogServerSettingsToolStripMenuItem.Click += new System.EventHandler(this.syslogServerSettingsToolStripMenuItem_Click);
             // 
@@ -179,8 +179,8 @@
             // 
             this.fTPSyncroniseFrequencyToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.fTPSyncroniseFrequencyToolStripMenuItem.Name = "fTPSyncroniseFrequencyToolStripMenuItem";
-            this.fTPSyncroniseFrequencyToolStripMenuItem.Size = new System.Drawing.Size(241, 26);
-            this.fTPSyncroniseFrequencyToolStripMenuItem.Text = "FTP / SFTP HeartBeaths";
+            this.fTPSyncroniseFrequencyToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
+            this.fTPSyncroniseFrequencyToolStripMenuItem.Text = "FTP / SFTP HeartBeats";
             this.fTPSyncroniseFrequencyToolStripMenuItem.Click += new System.EventHandler(this.fTPSyncroniseFrequencyToolStripMenuItem_Click);
             // 
             // listBox_logs

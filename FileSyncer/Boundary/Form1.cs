@@ -373,7 +373,7 @@ namespace FileSyncer.Boundary
 
         private void fTPSyncroniseFrequencyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new FrequencyFRM();
+            var frm = new HeartBeatFRM();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 ApplicationLogger.AddLog($"FTP syncronisation set to: {frm.FTPMinute} min"); 

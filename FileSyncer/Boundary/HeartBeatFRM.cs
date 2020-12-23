@@ -4,14 +4,14 @@ using System.Windows.Forms;
 
 namespace FileSyncer.Boundary
 {
-    public partial class FrequencyFRM : Form
+    public partial class HeartBeatFRM : Form
     {
         private int ftp_minute;
         private int sftp_minute;
         internal int FTPMinute { get => ftp_minute; }
         public int SFTP_minute { get => sftp_minute; }
 
-        public FrequencyFRM()
+        public HeartBeatFRM()
         {
             InitializeComponent();
         }

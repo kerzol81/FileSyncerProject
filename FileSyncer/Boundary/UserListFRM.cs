@@ -2,6 +2,7 @@
 using FileSyncer.Control;
 using System;
 using System.Windows.Forms;
+using FileSyncer.Entity;
 
 namespace FileSyncer
 {
@@ -77,6 +78,7 @@ namespace FileSyncer
             else if (StandardMessages.ShowMessageBox_Delete_User(selectedUserID) == DialogResult.OK)
             {
                 DBHandler.DeleteUser(selected);
+                ApplicationLogger.AddLog($"User: {selected.UserName} deleted.");
                 DynamicDataStore.LoadUsers();
                 UpdateUsersLSTV();
             }

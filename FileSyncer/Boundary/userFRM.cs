@@ -1,7 +1,7 @@
 ﻿using FileSyncer.Control;
 using System;
 using System.Windows.Forms;
-
+using FileSyncer.Entity;
 
 namespace FileSyncer.Boundary
 {
@@ -45,15 +45,17 @@ namespace FileSyncer.Boundary
                     {
                         user = new User(textBox_username.Text, Helper.sha256_hash(textBox_password.Text), comboBox_userlevel.Text);
                         DBHandler.AddUser(user);
+                        ApplicationLogger.AddLog($"User: {user.UserName} added - UserLevel: {user.UserLevel}");
                         //DynamicDataStore.LoadUsers();
                     }
                 }
                 else    // modify existing user
                 {
                     user.UserName = textBox_username.Text;
-                    user.PassWord = textBox_password.Text;
+                    user.PassWord = Helper.sha256_hash(textBox_password.Text);
                     user.UserLevel = comboBox_userlevel.SelectedItem.ToString();
                     DBHandler.UpdateUser(user);
+                    ApplicationLogger.AddLog($"User: {user.UserName} modified - UserLevel: {user.UserLevel}");
                 }
             }
             else

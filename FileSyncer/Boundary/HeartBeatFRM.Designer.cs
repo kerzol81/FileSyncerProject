@@ -1,7 +1,7 @@
 ﻿
 namespace FileSyncer.Boundary
 {
-    partial class FrequencyFRM
+    partial class HeartBeatFRM
     {
         /// <summary>
         /// Required designer variable.
@@ -57,7 +57,7 @@ namespace FileSyncer.Boundary
             this.button_ok.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.button_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_ok.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.button_ok.Location = new System.Drawing.Point(168, 122);
+            this.button_ok.Location = new System.Drawing.Point(201, 122);
             this.button_ok.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(87, 30);
@@ -141,11 +141,11 @@ namespace FileSyncer.Boundary
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label1.Location = new System.Drawing.Point(225, 20);
+            this.label1.Location = new System.Drawing.Point(223, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 20);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 16;
-            this.label1.Text = "minute";
+            this.label1.Text = "minutes";
             // 
             // label2
             // 
@@ -154,16 +154,16 @@ namespace FileSyncer.Boundary
             this.label2.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label2.Location = new System.Drawing.Point(223, 70);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 20);
+            this.label2.Size = new System.Drawing.Size(65, 20);
             this.label2.TabIndex = 17;
-            this.label2.Text = "minute";
+            this.label2.Text = "minutes";
             // 
-            // FrequencyFRM
+            // HeartBeatFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(294, 171);
+            this.ClientSize = new System.Drawing.Size(318, 169);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.numericUpDown_rsync);
@@ -175,8 +175,9 @@ namespace FileSyncer.Boundary
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FrequencyFRM";
+            this.Name = "HeartBeatFRM";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Frequency Settings";
             this.Load += new System.EventHandler(this.FrequencyFRM_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_ftp)).EndInit();

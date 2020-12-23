@@ -89,11 +89,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Boundary\FrequencyFRM.cs">
+    <Compile Include="Boundary\HeartBeatFRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\FrequencyFRM.Designer.cs">
-      <DependentUpon>FrequencyFRM.cs</DependentUpon>
+    <Compile Include="Boundary\HeartBeatFRM.Designer.cs">
+      <DependentUpon>HeartBeatFRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Boundary\FTP_FolderPairFRM.cs">
       <SubType>Form</SubType>
@@ -172,8 +172,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Boundary\FrequencyFRM.resx">
-      <DependentUpon>FrequencyFRM.cs</DependentUpon>
+    <EmbeddedResource Include="Boundary\HeartBeatFRM.resx">
+      <DependentUpon>HeartBeatFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\FTP_FolderPairFRM.resx">
       <DependentUpon>FTP_FolderPairFRM.cs</DependentUpon>
