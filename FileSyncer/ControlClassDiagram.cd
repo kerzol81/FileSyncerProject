@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FileSyncer.SMBFolderPair" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAQIEEQACAAOAACAAAIBAAACgVAAAIAgA=</HashCode>
+      <FileName>Control\SMBFolderPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileSyncer.Control.SFTPFolderPair" BaseTypeListCollapsed="true">
+    <Position X="5.5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAAIAQIEAQACBAOAAKQAAIBgAASA1AAEAAgA=</HashCode>
+      <FileName>Control\SFTPFolderPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileSyncer.FTPFolderPair" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAgAAQAIAQMEEQACBEOAACRAAIBgAASAVAAEAAgA=</HashCode>
+      <FileName>Control\FTPFolderPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileSyncer.Control.DynamicDataStore">
+    <Position X="8" Y="5.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACEAAAAAAAAAAAEBAEAAAAAAAAAAQAIAAAAAoAA=</HashCode>
+      <FileName>Control\DynamicDataStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.User" BaseTypeListCollapsed="true">
+    <Position X="8" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAgIAAAIEAAAAAKAAAAAAAAAAAQAAAAEAAgA=</HashCode>
+      <FileName>Control\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileSyncer.Control.UserLevels">
+    <Position X="8" Y="4.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Control\UserLevels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.LoggedInUser">
+    <Position X="11.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Control\LoggedInUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.Xor">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\Xor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.SyslogServer" BaseTypeListCollapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAEAAAAACAACAAAAAgAAAAgAAAAIAA=</HashCode>
+      <FileName>Control\SyslogServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="FileSyncer.Validator">
+    <Position X="10" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAKAAAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Control\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.Helper">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAQAABAAAAAAAAAAAAAgI=</HashCode>
+      <FileName>Control\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.CompareFiles">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Control\CompareFiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.DBHandlerExeption">
+    <Position X="11.75" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\DBHandlerExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

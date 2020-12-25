@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Comment CommentText="BOUNDARY">
+    <Position X="0.542" Y="0.5" Height="0.365" Width="6.033" />
+  </Comment>
+  <Comment CommentText="CONTROL">
+    <Position X="6.823" Y="0.5" Height="0.365" Width="6.21" />
+  </Comment>
+  <Comment CommentText="ENTITY">
+    <Position X="13.26" Y="0.51" Height="0.365" Width="2.523" />
+  </Comment>
+  <Class Name="FileSyncer.Boundary.Form1" Collapsed="true">
+    <Position X="2" Y="1" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>T0fMJAShgCYATTKDSBCQCAD/pxRChPSwVxWbFgAggCM=</HashCode>
+      <FileName>Boundary\Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.FTP_FolderPairFRM" Collapsed="true">
+    <Position X="3.5" Y="4" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CBEAEQAAAuEAABAAwACgBCQOAZQABAABAABBGAADCIA=</HashCode>
+      <FileName>Boundary\FTP_FolderPairFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.HeartBeatFRM" Collapsed="true">
+    <Position X="3.5" Y="6" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>QAAAEAAAICAAABAAAACAAAACAAAAJEAAAEAEEAACBAA=</HashCode>
+      <FileName>Boundary\HeartBeatFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.LoginFRM" Collapsed="true">
+    <Position X="0.5" Y="1" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAACAgAACCAAAAAAAAgAEAAAQAAA=</HashCode>
+      <FileName>Boundary\LoginFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.SFTP_FolderPairFRM" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>CBEAECAIAmEACAAAwACghCQOIBAABAABAIBAAAAHCIA=</HashCode>
+      <FileName>Boundary\SFTP_FolderPairFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.SMB_FolderPairFRM" Collapsed="true">
+    <Position X="3.5" Y="3" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>aBEAECAAACAAQBAAwACEACAOABAABCApAABQAAACCAA=</HashCode>
+      <FileName>Boundary\SMB_FolderPairFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.StandardMessages" Collapsed="true">
+    <Position X="3.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAEAKgAAEAAAAQAAAAAIgAECAAAABACQQACGAABAAA=</HashCode>
+      <FileName>Boundary\StandardMessages.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.SyslogFRM" Collapsed="true">
+    <Position X="3.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAiAAAAAAAACgAAQOAAAAhAAAAAAAAggCAAI=</HashCode>
+      <FileName>Boundary\SyslogFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Boundary.userFRM" Collapsed="true">
+    <Position X="3.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AJAAEAAAAGAAABAAAADAAAgGAAQABAAAAAAAABACAQA=</HashCode>
+      <FileName>Boundary\userFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.UserListFRM" Collapsed="true">
+    <Position X="5.25" Y="1" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>BEAAAAABACIAAAEAAASAIICDAwAAAACAAAAAAAEAAAA=</HashCode>
+      <FileName>Boundary\UserListFRM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.DBHandlerExeption" Collapsed="true">
+    <Position X="10.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\DBHandlerExeption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.FTPFolderPair" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAACAgAAQAIAQMEEQACBEOAACRAAIBgAASAVAAEAAgA=</HashCode>
+      <FileName>Control\FTPFolderPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FileSyncer.SMBFolderPair" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAQIEEQACAAOAACAAAIBAAACgVAAAIAgA=</HashCode>
+      <FileName>Control\SMBFolderPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FileSyncer.Validator" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAKAAAAAACAAAAAAAABAA=</HashCode>
+      <FileName>Control\Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.DBHandler" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAUAAIBAAAEAQAAEAAEBAMAgAQQACAggAAaCAAAAoAg=</HashCode>
+      <FileName>Entity\DBHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.FileSyncerDBDataSet" Collapsed="true">
+    <Position X="10.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAwAAAAJABAAgQAAQAAwCQBgAAAAAAAEABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Program" Collapsed="true">
+    <Position X="9" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.CompareFiles" Collapsed="true">
+    <Position X="8.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Control\CompareFiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.DynamicDataStore" Collapsed="true">
+    <Position X="6.75" Y="3.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAACEAAAAAAAAAAAEBAEAAAAAAAAAAQAIAAAAAoAA=</HashCode>
+      <FileName>Control\DynamicDataStore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.Helper" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAgAAAAAAAAAAAQAABAAAAAAAAAAAAAgI=</HashCode>
+      <FileName>Control\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.LoggedInUser" Collapsed="true">
+    <Position X="10.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Control\LoggedInUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.SFTPFolderPair" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAAIAQIEAQACBAOAAKQAAIBgAASA1AAEAAgA=</HashCode>
+      <FileName>Control\SFTPFolderPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FileSyncer.Control.SyslogServer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAEAAAAACAACAAAAAgAAAAgAAAAIAA=</HashCode>
+      <FileName>Control\SyslogServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FileSyncer.Control.User" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAgIAAAIEAAAAAKAAAAAAAAAAAQAAAAEAAgA=</HashCode>
+      <FileName>Control\User.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="FileSyncer.Control.UserLevels" Collapsed="true">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Control\UserLevels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Control.Xor" Collapsed="true">
+    <Position X="8.75" Y="3.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAQAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\Xor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.ApplicationLogger" Collapsed="true">
+    <Position X="13.25" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAQAAAAkAAAAAAAAAAIAAAAAAAABAAEAAAAAAA=</HashCode>
+      <FileName>Entity\ApplicationLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.Exporter" Collapsed="true">
+    <Position X="13.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Entity\Exporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.GenericCSVHandler&lt;T&gt;" Collapsed="true">
+    <Position X="13.25" Y="4.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\GenericCSVHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.LogWriter" Collapsed="true">
+    <Position X="13.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\LogWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.Syncroniser" Collapsed="true">
+    <Position X="13.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAEAAABAA=</HashCode>
+      <FileName>Entity\Syncroniser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.FileSyncerDBDataSetTableAdapters.SMBFolderPairsTableAdapter" Collapsed="true">
+    <Position X="6.75" Y="6" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EASAAGAAEAAAAAcAIAAAAAAAACEICAAAAAAAAAAABBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.FileSyncerDBDataSetTableAdapters.TableAdapterManager" Collapsed="true">
+    <Position X="6.75" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQAAACAAAABABAEBAAAAMAAgIAACiAAAAAQAAAAABAQ=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Properties.Resources" Collapsed="true">
+    <Position X="9.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Properties.Settings" Collapsed="true">
+    <Position X="11.25" Y="6" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAACABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="FileSyncer.ICSVFormat" Collapsed="true">
+    <Position X="6.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\ICSVFormat.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FileSyncer.IListViewRow" Collapsed="true">
+    <Position X="8.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\IListViewRow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
