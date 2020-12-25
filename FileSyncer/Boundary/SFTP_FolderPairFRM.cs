@@ -104,8 +104,7 @@ namespace FileSyncer.Boundary
             if (fdb.ShowDialog() == DialogResult.OK)
             {
                 textBox_destination.Text = fdb.SelectedPath;
-            }
-            
+            }         
         }
 
         private void button_test_Click(object sender, EventArgs e)
@@ -150,8 +149,7 @@ namespace FileSyncer.Boundary
                 StandardMessages.ShowMessageBox_EmptyFieldsOnForm();
                 DialogResult = DialogResult.None;
                 textBox_friendlyName.Focus();
-            }
-            
+            }          
         }
 
         private bool SFTPLoginOK()
@@ -208,7 +206,6 @@ namespace FileSyncer.Boundary
                 return false;
             }
         }
-
         private void SFTP_FolderPairFRM_Load(object sender, EventArgs e)
         {
             textBox_friendlyName.Focus();

@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace FileSyncer.Control
 {
     class SFTPFolderPair : ICSVFormat, IListViewRow

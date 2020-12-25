@@ -1,7 +1,4 @@
-﻿using FileSyncer;
-using FileSyncer.Control;
-using System;
-using System.IO;
+﻿using System;
 
 namespace FileSyncer
 {
@@ -170,8 +167,7 @@ namespace FileSyncer
         // Dapper uses this when filling up the DynamicDataStore from DB
         public FTPFolderPair(int? id, string friendlyName, string sourceip, int port, bool passive, string sharedFolder, string username, string password, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled) :this(friendlyName, sourceip, port, passive, sharedFolder, username, password, destinationFolder, added, startSync, stopSync, deleteSourceFiles, enabled)
         {
-            Id = id;
-            
+            Id = id;           
         }
         #endregion
 
@@ -183,8 +179,6 @@ namespace FileSyncer
             return $"{friendlyName}\t{sourceIP}\t{port}\t{p}\t{sharedFolder}\t{destinationFolder}\t{StartSync}\t{StopSync}\t{status}";
         }       
         #endregion
-
-
 
         #region Interface Implementations
         public string CSVFormat()

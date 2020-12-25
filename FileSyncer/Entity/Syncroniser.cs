@@ -8,7 +8,7 @@ namespace FileSyncer.Entity
 {
     static class Syncroniser
     {
-        private static int ftp_minute = 1;  // will be adjustable at runtime Bfrom GUI
+        private static int ftp_minute = 1;  // will be adjustable at runtime from GUI
         private static int sftp_minute = 1;
 
         internal static int Ftp_minute { get => ftp_minute; set => ftp_minute = value; }

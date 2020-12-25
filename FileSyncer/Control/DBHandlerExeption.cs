@@ -8,7 +8,5 @@ namespace FileSyncer
         public DBHandlerExeption(string message, Exception innerException) : base(message, innerException)
         {
         }
-
-
     }
 }

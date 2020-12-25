@@ -1,0 +1,11 @@
+﻿
+
+https://docs.microsoft.com/en-us/troubleshoot/dotnet/csharp/create-file-compare
+
+https://stackoverflow.com/questions/16999361/obtain-sha-256-string-of-a-string
+
+https://stackoverflow.com/questions/1257500/c-sharp-listview-column-width-auto
+
+https://stackoverflow.com/questions/4879197/using-reflection-read-properties-of-an-object-containing-array-of-another-object
+
+https://stackoverflow.com/a/19297948

@@ -12,16 +12,13 @@ namespace FileSyncer.Boundary
 
         public SyslogFRM()
         {
-            InitializeComponent();
-            
-            
+            InitializeComponent();         
         }
 
         internal SyslogFRM(SyslogServer mod):this()
         {
             server = mod;
-            textBox_ip.Text = server.Ip;
-            
+            textBox_ip.Text = server.Ip;          
         }
 
 
@@ -82,8 +79,7 @@ namespace FileSyncer.Boundary
                 StandardMessages.ShowMessageBox_EmptyFieldsOnForm();
                 textBox_ip.Focus();
                 DialogResult = DialogResult.None;
-            }
-            
+            }            
         }
     }
 }

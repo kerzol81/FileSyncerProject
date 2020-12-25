@@ -251,6 +251,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Entity\sources.txt" />
     <Content Include="Entity\ToDo.txt" />
     <Content Include="FileSyncerDB.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

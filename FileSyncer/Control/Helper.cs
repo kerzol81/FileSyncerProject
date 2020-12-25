@@ -9,7 +9,7 @@ namespace FileSyncer.Control
 {
     static class Helper
     {
-    #region SyslogServer Related
+        #region SyslogServer Related
         private static SyslogServer server;
         public static bool isSyslogEnabled()
         {
@@ -29,6 +29,8 @@ namespace FileSyncer.Control
             }
             return false;
         }
+        #endregion
+
         #region ListView Related
         // https://stackoverflow.com/questions/1257500/c-sharp-listview-column-width-auto
         public static void ResizeListViewColumns(ListView lv)
@@ -75,13 +77,9 @@ namespace FileSyncer.Control
                 foreach (Byte b in result)
                     Sb.Append(b.ToString("x2"));
             }
-
             return Sb.ToString();
         }
 
         #endregion  
     }
-    #endregion
-
-
 }

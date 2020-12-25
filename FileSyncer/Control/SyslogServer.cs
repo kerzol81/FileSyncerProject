@@ -1,5 +1,4 @@
 ﻿
-
 namespace FileSyncer.Control
 {
     class SyslogServer : ICSVFormat
@@ -65,7 +64,7 @@ namespace FileSyncer.Control
         }
         #endregion
 
-        #region Functions, Methods
+        #region Functions, Methods, Interface Implementation
 
         public override string ToString()
         {
