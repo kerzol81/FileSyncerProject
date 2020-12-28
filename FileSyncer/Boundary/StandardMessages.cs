@@ -43,6 +43,10 @@ namespace FileSyncer.Boundary
         {
             return MessageBox.Show("Closing the Application?", "Closing", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
+        internal static void ShowMessageBox_UserExists(string userName)
+        {
+            MessageBox.Show($"{userName} is an existing user!", "Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
         #region Folder Pair
         internal static DialogResult ShowMessageBox_Delete_SMBFolderPair(int id)
         {

@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using FileSyncer.Entity;
+using System.Linq;
 
 namespace FileSyncer.Boundary
 {
@@ -44,12 +45,19 @@ namespace FileSyncer.Boundary
                     else
                     {
                         user = new User(textBox_username.Text, Helper.sha256_hash(textBox_password.Text), comboBox_userlevel.Text);
-                        DBHandler.AddUser(user);
-                        ApplicationLogger.AddLog($"User: {user.UserName} added - UserLevel: {user.UserLevel}");
-                        //DynamicDataStore.LoadUsers();
+                        
+                        if (DynamicDataStore.Users.Any(item => item.UserName == user.UserName))
+                        {
+                            StandardMessages.ShowMessageBox_UserExists(textBox_username.Text);
+                        }
+                        else
+                        {
+                            DBHandler.AddUser(user);
+                            ApplicationLogger.AddLog($"User: {user.UserName} added - UserLevel: {user.UserLevel}");
+                        }                       
                     }
                 }
-                else    // modify existing user
+                else    // modify an existing user
                 {
                     user.UserName = textBox_username.Text;
                     user.PassWord = Helper.sha256_hash(textBox_password.Text);

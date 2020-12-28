@@ -210,6 +210,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="ControlClassDiagram.cd" />
+    <None Include="Entity\Entity_ClassDiagram.cd" />
     <None Include="Normal_ClassDiagram.cd" />
     <None Include="FileSyncerDBDataSet1.xsc">
       <DependentUpon>FileSyncerDBDataSet1.xsd</DependentUpon>

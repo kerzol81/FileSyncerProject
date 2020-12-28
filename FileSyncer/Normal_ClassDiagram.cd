@@ -54,7 +54,7 @@
   <Class Name="FileSyncer.Boundary.StandardMessages" Collapsed="true">
     <Position X="3.5" Y="7" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAEAKgAAEAAAAQAAAAAIgAECAAAABACQQACGAABAAA=</HashCode>
+      <HashCode>AAAEQKgAAEAAAAQAAAAAIgAECAAAABACQQACGAABAAA=</HashCode>
       <FileName>Boundary\StandardMessages.cs</FileName>
     </TypeIdentifier>
   </Class>

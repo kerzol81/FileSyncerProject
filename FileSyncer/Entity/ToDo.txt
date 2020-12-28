@@ -1,2 +1,1 @@
-﻿user level display
-source / destination folder duplicati
+﻿testCases!

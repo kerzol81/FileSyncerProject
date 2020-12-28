@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FileSyncer.Entity.ApplicationLogger">
+    <Position X="1" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ACAAIAAQAAAAkAAAAAAAAAAIAAAAAAAABAAEAAAAAAA=</HashCode>
+      <FileName>Entity\ApplicationLogger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.Syncroniser">
+    <Position X="8" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEAAAAABAAAAAAAAAgAAAAAAAAAAAAAAAAEAAABAA=</HashCode>
+      <FileName>Entity\Syncroniser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.DBHandler">
+    <Position X="3.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>BAUAAIBAAAEAQAAEAAEBAMAgAQQACAggAAaCAAAAoAg=</HashCode>
+      <FileName>Entity\DBHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.Exporter">
+    <Position X="6.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Entity\Exporter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.LogWriter">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\LogWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileSyncer.Entity.GenericCSVHandler&lt;T&gt;">
+    <Position X="8" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\GenericCSVHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
