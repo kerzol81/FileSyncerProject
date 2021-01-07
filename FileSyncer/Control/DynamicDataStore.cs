@@ -8,7 +8,7 @@ namespace FileSyncer.Control
         internal static List<User> Users { get; private set; }
         internal static List<SMBFolderPair> SmbFolderPairs { get; private set; }
         internal static List<FTPFolderPair> FtpFolderPairs { get; private set; }
-        internal static List<SFTPFolderPair> SftpFolderPairs { get; private set; }
+        internal static List<TFTPFolderPair> SftpFolderPairs { get; private set; }
         internal static User LoggedInUser { get; set; }
         #endregion
 
@@ -17,7 +17,7 @@ namespace FileSyncer.Control
             Users = new List<User>();
             SmbFolderPairs = new List<SMBFolderPair>();
             FtpFolderPairs = new List<FTPFolderPair>();
-            SftpFolderPairs = new List<SFTPFolderPair>();
+            SftpFolderPairs = new List<TFTPFolderPair>();
             LoggedInUser = null;
         }  
         internal static void LoadSMBFolderPairs()

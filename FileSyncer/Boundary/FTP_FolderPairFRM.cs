@@ -3,8 +3,8 @@ using System.Net;
 using System.Windows.Forms;
 using FileSyncer.Control;
 using System.Drawing;
-using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace FileSyncer.Boundary
 {
@@ -34,13 +34,15 @@ namespace FileSyncer.Boundary
         }
         private void button_ok_Click(object sender, EventArgs e)
         {
+            
             if (label_testing.Text != "OK")
             {
                 StandardMessages.ShowMessageBox_MissedFTPServerTest();
                 DialogResult = DialogResult.None;
             }
-            if (ftpFolderPair == null) // new insert, "added" as creation time is set now
-            {
+            SourceFolderDuplicationCheck();
+            if (ftpFolderPair == null) // new
+            {   
                 ftpFolderPair = new FTPFolderPair(
                             textBox_friendlyName.Text,
                             textBox_ip.Text,
@@ -59,6 +61,7 @@ namespace FileSyncer.Boundary
             }
             else // mod
             {
+                
                 ftpFolderPair.FriendlyName = textBox_friendlyName.Text;
                 ftpFolderPair.SourceIP = textBox_ip.Text;
                 ftpFolderPair.Port = (int)numericUpDown_port.Value;
@@ -72,6 +75,14 @@ namespace FileSyncer.Boundary
                 ftpFolderPair.Enabled = checkBox_enabled.Checked;
                 ftpFolderPair.DeleteSourceFiles = checkBox_deleteSourceFiles.Checked;
                 DBHandler.UpdateFTPFolderPair(ftpFolderPair);
+            }
+        }
+        private void SourceFolderDuplicationCheck()
+        {
+            if (DynamicDataStore.FtpFolderPairs.Any(x => x.SharedFolder == textBox_shared.Text))
+            {
+                StandardMessages.ShowMessageBox_SharedFolderIsAlreadyUsed(textBox_shared.Text);
+                DialogResult = DialogResult.None;
             }
         }
 
@@ -89,36 +100,42 @@ namespace FileSyncer.Boundary
         }
         private void button_test_Click(object sender, EventArgs e)
         {
-            label_testing.Text = "";
-            label_testing.ForeColor = Color.Green;
-            label_testing.Text = "Testing";
-            label_testing.ForeColor = Color.Green;
-
-            textBox_ip.Enabled = false;
-            numericUpDown_port.Enabled = false;
-            textBox_username.Enabled = false;
-            textBox_password.Enabled = false;
-            button_test.Enabled = false;
-            if (LoginOK())
+            if (!Validator.IP(textBox_ip.Text))
             {
-                label_testing.Text = "OK";
-                label_testing.ForeColor = Color.Green;
+                StandardMessages.ShowMessageBox_InvalidIPAddress();
+                textBox_ip.Focus();
+                DialogResult = DialogResult.None;
             }
             else
             {
-                label_testing.Text = "Error";
-                label_testing.ForeColor = Color.Red;
-            }
+                label_testing.Text = "";
+                label_testing.ForeColor = Color.Green;
+                label_testing.Text = "Testing";
+                label_testing.ForeColor = Color.Green;
 
-            textBox_ip.Enabled = true;
-            numericUpDown_port.Enabled = true;
-            textBox_username.Enabled = true;
-            textBox_password.Enabled = true;
-            button_test.Enabled = true;
-
-            DialogResult = DialogResult.None;
+                textBox_ip.Enabled = false;
+                numericUpDown_port.Enabled = false;
+                textBox_username.Enabled = false;
+                textBox_password.Enabled = false;
+                button_test.Enabled = false;
+                if (LoginOK())
+                {
+                    label_testing.Text = "OK";
+                    label_testing.ForeColor = Color.Green;
+                }
+                else
+                {
+                    label_testing.Text = "Error";
+                    label_testing.ForeColor = Color.Red;
+                }
+                textBox_ip.Enabled = true;
+                numericUpDown_port.Enabled = true;
+                textBox_username.Enabled = true;
+                textBox_password.Enabled = true;
+                button_test.Enabled = true;
+                DialogResult = DialogResult.None;
+            }         
         }
-
         bool LoginOK()
         {
             try
@@ -143,56 +160,9 @@ namespace FileSyncer.Boundary
                 return false;
             }
         }
-
-        private void textBox_ip_MouseClick(object sender, MouseEventArgs e)
-        {
-            textBox_ip.Clear();
-            textBox_ip.ForeColor = Color.Black;
-        }
-
-        private void textBox_shared_MouseClick(object sender, MouseEventArgs e)
-        {
-            textBox_shared.Clear();
-            textBox_shared.ForeColor = Color.Black;
-        }
-
-        private void textBox_ip_MouseLeave(object sender, EventArgs e)
-        {
-            if (!Validator.IP(textBox_ip.Text))
-            {
-                StandardMessages.ShowMessageBox_InvalidIPAddress();
-                textBox_ip.Focus();
-            }
-        }
         private void FTP_FolderPairFRM_Load(object sender, EventArgs e)
         {
             checkBox_enabled.Checked = true;
-        }
-
-        private void textBox_destination_TextChanged(object sender, EventArgs e)
-        {
-            foreach (var item in DynamicDataStore.FtpFolderPairs)
-            {
-                if (item.DestinationFolder == textBox_destination.Text)
-                {
-                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
-                    textBox_destination.Clear();
-                    DialogResult = DialogResult.None;
-                }
-            }
-        }
-
-        private void textBox_shared_TextChanged(object sender, EventArgs e)
-        {
-            foreach (var item in DynamicDataStore.FtpFolderPairs)
-            {
-                if (item.SharedFolder == textBox_shared.Text)
-                {
-                    StandardMessages.ShowMessageBox_SourceSharedFolderIsAlreadyUsed(item.Id.ToString());
-                    textBox_shared.Clear();
-                    DialogResult = DialogResult.None;
-                }
-            }
-        }
+        }     
     }
 }

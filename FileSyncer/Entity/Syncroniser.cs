@@ -9,10 +9,10 @@ namespace FileSyncer.Entity
     static class Syncroniser
     {
         private static int ftp_minute = 1;  // will be adjustable at runtime from GUI
-        private static int sftp_minute = 1;
+        private static int tftp_minute = 1;
 
         internal static int Ftp_minute { get => ftp_minute; set => ftp_minute = value; }
-        public static int Sftp_minute { get => sftp_minute; set => sftp_minute = value; }
+        public static int Tftp_minute { get => tftp_minute; set => tftp_minute = value; }
 
         static internal async void FTP(FTPFolderPair f)
         {
@@ -55,7 +55,7 @@ namespace FileSyncer.Entity
             }
         }
 
-        static internal void SFTP(SFTPFolderPair f)
+        static internal void TFTP(TFTPFolderPair f)
         {
             bool inBetweenSyncBoundary = f.StartSync < DateTime.Now && f.StopSync > DateTime.Now;
             if (f.Enabled &&inBetweenSyncBoundary)

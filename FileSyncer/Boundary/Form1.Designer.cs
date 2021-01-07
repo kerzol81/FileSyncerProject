@@ -42,7 +42,7 @@
             this.listBox_logs = new System.Windows.Forms.ListBox();
             this.label_smb = new System.Windows.Forms.Label();
             this.label_ftp = new System.Windows.Forms.Label();
-            this.label_rsync = new System.Windows.Forms.Label();
+            this.label_tftp = new System.Windows.Forms.Label();
             this.button_smb_add = new System.Windows.Forms.Button();
             this.button_smb_del = new System.Windows.Forms.Button();
             this.button_smb_mod = new System.Windows.Forms.Button();
@@ -180,7 +180,7 @@
             this.fTPSyncroniseFrequencyToolStripMenuItem.ForeColor = System.Drawing.Color.MidnightBlue;
             this.fTPSyncroniseFrequencyToolStripMenuItem.Name = "fTPSyncroniseFrequencyToolStripMenuItem";
             this.fTPSyncroniseFrequencyToolStripMenuItem.Size = new System.Drawing.Size(238, 26);
-            this.fTPSyncroniseFrequencyToolStripMenuItem.Text = "FTP / SFTP HeartBeats";
+            this.fTPSyncroniseFrequencyToolStripMenuItem.Text = "FTP / TFTP HeartBeats";
             this.fTPSyncroniseFrequencyToolStripMenuItem.Click += new System.EventHandler(this.fTPSyncroniseFrequencyToolStripMenuItem_Click);
             // 
             // listBox_logs
@@ -218,16 +218,16 @@
             this.label_ftp.TabIndex = 6;
             this.label_ftp.Text = "FTP Folder Pairs";
             // 
-            // label_rsync
+            // label_tftp
             // 
-            this.label_rsync.AutoSize = true;
-            this.label_rsync.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_rsync.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label_rsync.Location = new System.Drawing.Point(20, 500);
-            this.label_rsync.Name = "label_rsync";
-            this.label_rsync.Size = new System.Drawing.Size(129, 21);
-            this.label_rsync.TabIndex = 8;
-            this.label_rsync.Text = "SFTP Folder Pairs";
+            this.label_tftp.AutoSize = true;
+            this.label_tftp.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_tftp.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label_tftp.Location = new System.Drawing.Point(20, 500);
+            this.label_tftp.Name = "label_tftp";
+            this.label_tftp.Size = new System.Drawing.Size(128, 21);
+            this.label_tftp.TabIndex = 8;
+            this.label_tftp.Text = "TFTP Folder Pairs";
             // 
             // button_smb_add
             // 
@@ -637,7 +637,7 @@
             this.Controls.Add(this.button_smb_mod);
             this.Controls.Add(this.button_smb_del);
             this.Controls.Add(this.button_smb_add);
-            this.Controls.Add(this.label_rsync);
+            this.Controls.Add(this.label_tftp);
             this.Controls.Add(this.label_ftp);
             this.Controls.Add(this.label_smb);
             this.Controls.Add(this.menuStrip1);
@@ -672,7 +672,7 @@
         private System.Windows.Forms.ToolStripMenuItem cSVExportUsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem syslogServerSettingsToolStripMenuItem;
         private System.Windows.Forms.Label label_ftp;
-        private System.Windows.Forms.Label label_rsync;
+        private System.Windows.Forms.Label label_tftp;
         private System.Windows.Forms.Button button_smb_add;
         private System.Windows.Forms.Button button_smb_del;
         private System.Windows.Forms.Button button_smb_mod;

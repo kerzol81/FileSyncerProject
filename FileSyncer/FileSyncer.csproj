@@ -107,11 +107,11 @@
     <Compile Include="Boundary\LoginFRM.Designer.cs">
       <DependentUpon>LoginFRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Boundary\SFTP_FolderPairFRM.cs">
+    <Compile Include="Boundary\TFTP_FolderPairFRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Boundary\SFTP_FolderPairFRM.Designer.cs">
-      <DependentUpon>SFTP_FolderPairFRM.cs</DependentUpon>
+    <Compile Include="Boundary\TFTP_FolderPairFRM.Designer.cs">
+      <DependentUpon>TFTP_FolderPairFRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Boundary\SMB_FolderPairFRM.cs">
       <SubType>Form</SubType>
@@ -139,7 +139,7 @@
     <Compile Include="Control\UserLevels.cs" />
     <Compile Include="Entity\ApplicationLogger.cs" />
     <Compile Include="Control\FTPFolderPair.cs" />
-    <Compile Include="Control\SFTPFolderPair.cs" />
+    <Compile Include="Control\TFTPFolderPair.cs" />
     <Compile Include="Control\SMBFolderPair.cs" />
     <Compile Include="Boundary\Form1.cs">
       <SubType>Form</SubType>
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="Boundary\LoginFRM.resx">
       <DependentUpon>LoginFRM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Boundary\SFTP_FolderPairFRM.resx">
-      <DependentUpon>SFTP_FolderPairFRM.cs</DependentUpon>
+    <EmbeddedResource Include="Boundary\TFTP_FolderPairFRM.resx">
+      <DependentUpon>TFTP_FolderPairFRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Boundary\SMB_FolderPairFRM.resx">
       <DependentUpon>SMB_FolderPairFRM.cs</DependentUpon>

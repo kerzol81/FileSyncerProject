@@ -32,7 +32,7 @@ namespace FileSyncer.Entity
                 }
                 if (DynamicDataStore.SftpFolderPairs.Count > 0)
                 {
-                    GenericCSVHandler<SFTPFolderPair>.WriteWithHeaders(DynamicDataStore.SftpFolderPairs, Path.Combine(frm.SelectedPath, "Filesyncer_SFTP_FolderPairs_Export.csv"));
+                    GenericCSVHandler<TFTPFolderPair>.WriteWithHeaders(DynamicDataStore.SftpFolderPairs, Path.Combine(frm.SelectedPath, "Filesyncer_SFTP_FolderPairs_Export.csv"));
                 }         
             }
         }

@@ -87,16 +87,13 @@
             // 
             // textBox_ip
             // 
-            this.textBox_ip.ForeColor = System.Drawing.Color.Red;
+            this.textBox_ip.ForeColor = System.Drawing.Color.Black;
             this.textBox_ip.Location = new System.Drawing.Point(160, 60);
             this.textBox_ip.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_ip.MaxLength = 15;
             this.textBox_ip.Name = "textBox_ip";
             this.textBox_ip.Size = new System.Drawing.Size(120, 25);
             this.textBox_ip.TabIndex = 2;
-            this.textBox_ip.Text = "192.168.0.100";
-            this.textBox_ip.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox_ip_MouseClick);
-            this.textBox_ip.MouseLeave += new System.EventHandler(this.textBox_ip_MouseLeave);
             // 
             // textBox_destination
             // 
@@ -106,7 +103,6 @@
             this.textBox_destination.Name = "textBox_destination";
             this.textBox_destination.Size = new System.Drawing.Size(233, 25);
             this.textBox_destination.TabIndex = 15;
-            this.textBox_destination.TextChanged += new System.EventHandler(this.textBox_destination_TextChanged);
             // 
             // button_destination
             // 
@@ -325,16 +321,13 @@
             // 
             // textBox_shared
             // 
-            this.textBox_shared.ForeColor = System.Drawing.Color.Red;
+            this.textBox_shared.ForeColor = System.Drawing.Color.Black;
             this.textBox_shared.Location = new System.Drawing.Point(286, 60);
             this.textBox_shared.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_shared.MaxLength = 64;
             this.textBox_shared.Name = "textBox_shared";
             this.textBox_shared.Size = new System.Drawing.Size(107, 25);
             this.textBox_shared.TabIndex = 3;
-            this.textBox_shared.Text = "SharedFolder";
-            this.textBox_shared.MouseClick += new System.Windows.Forms.MouseEventHandler(this.textBox_shared_MouseClick);
-            this.textBox_shared.TextChanged += new System.EventHandler(this.textBox_shared_TextChanged);
             // 
             // FTP_FolderPairFRM
             // 

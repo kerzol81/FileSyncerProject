@@ -215,7 +215,7 @@ namespace FileSyncer
         #endregion
 
         #region SFTP Folder Pair CRUD
-        internal static void InsertSFTPFolderPair(SFTPFolderPair _new)
+        internal static void InsertSFTPFolderPair(TFTPFolderPair _new)
         {
             try
             {
@@ -233,7 +233,7 @@ namespace FileSyncer
                 throw new DBHandlerExeption(message, ex);
             }
         }
-        internal static void UpdateSFTPFolderPair(SFTPFolderPair _mod)
+        internal static void UpdateSFTPFolderPair(TFTPFolderPair _mod)
         {
             try
             {
@@ -250,7 +250,7 @@ namespace FileSyncer
                 throw new DBHandlerExeption(message, ex);
             }
         }
-        internal static void DeleteSFTPFolderPair(SFTPFolderPair del)
+        internal static void DeleteSFTPFolderPair(TFTPFolderPair del)
         {
             try
             {
@@ -268,11 +268,11 @@ namespace FileSyncer
                 throw new DBHandlerExeption(message, ex);
             }
         }
-        internal static List<SFTPFolderPair> LoadSFTPFolderPairs()
+        internal static List<TFTPFolderPair> LoadSFTPFolderPairs()
         {
             using (IDbConnection connection = new SqlConnection(LoadConnectionString()))
             {
-                var folderPairs = connection.Query<SFTPFolderPair>("SELECT * FROM [SFTPFolderPairs]").ToList();
+                var folderPairs = connection.Query<TFTPFolderPair>("SELECT * FROM [SFTPFolderPairs]").ToList();
                 foreach (var item in folderPairs)
                 {
                     var e = item.PassWord;

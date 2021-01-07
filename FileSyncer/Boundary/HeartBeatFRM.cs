@@ -18,7 +18,7 @@ namespace FileSyncer.Boundary
         private void FrequencyFRM_Load(object sender, EventArgs e)
         {
             numericUpDown_ftp.Value = Syncroniser.Ftp_minute;
-            numericUpDown_rsync.Value = Syncroniser.Sftp_minute;
+            numericUpDown_rsync.Value = Syncroniser.Tftp_minute;
         }
         private void button_ok_Click(object sender, EventArgs e)
         {
@@ -26,7 +26,7 @@ namespace FileSyncer.Boundary
             Syncroniser.Ftp_minute = (int)numericUpDown_ftp.Value;
 
             sftp_minute = (int)numericUpDown_rsync.Value;
-            Syncroniser.Sftp_minute = (int)numericUpDown_rsync.Value;
+            Syncroniser.Tftp_minute = (int)numericUpDown_rsync.Value;
         }        
     }
 }

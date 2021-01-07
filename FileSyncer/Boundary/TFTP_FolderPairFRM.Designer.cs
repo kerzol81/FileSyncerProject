@@ -1,6 +1,6 @@
 ﻿namespace FileSyncer.Boundary
 {
-    partial class SFTP_FolderPairFRM
+    partial class TFTP_FolderPairFRM
     {
         /// <summary>
         /// Required designer variable.
@@ -42,7 +42,7 @@
             this.button_destination = new System.Windows.Forms.Button();
             this.label_destination = new System.Windows.Forms.Label();
             this.textBox_ip = new System.Windows.Forms.TextBox();
-            this.label_sftp_server_ip = new System.Windows.Forms.Label();
+            this.label_tftp_server_ip = new System.Windows.Forms.Label();
             this.textBox_friendlyName = new System.Windows.Forms.TextBox();
             this.label_fn = new System.Windows.Forms.Label();
             this.textBox_password = new System.Windows.Forms.TextBox();
@@ -71,6 +71,8 @@
             // checkBox_enabled
             // 
             this.checkBox_enabled.AutoSize = true;
+            this.checkBox_enabled.Checked = true;
+            this.checkBox_enabled.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_enabled.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.checkBox_enabled.Location = new System.Drawing.Point(160, 410);
             this.checkBox_enabled.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -194,7 +196,6 @@
             this.textBox_destination.Name = "textBox_destination";
             this.textBox_destination.Size = new System.Drawing.Size(175, 25);
             this.textBox_destination.TabIndex = 9;
-            this.textBox_destination.TextChanged += new System.EventHandler(this.textBox_destination_TextChanged);
             // 
             // button_destination
             // 
@@ -228,18 +229,17 @@
             this.textBox_ip.Name = "textBox_ip";
             this.textBox_ip.Size = new System.Drawing.Size(233, 25);
             this.textBox_ip.TabIndex = 2;
-            this.textBox_ip.MouseLeave += new System.EventHandler(this.textBox_ip_MouseLeave);
             // 
-            // label_sftp_server_ip
+            // label_tftp_server_ip
             // 
-            this.label_sftp_server_ip.AutoSize = true;
-            this.label_sftp_server_ip.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label_sftp_server_ip.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label_sftp_server_ip.Location = new System.Drawing.Point(20, 60);
-            this.label_sftp_server_ip.Name = "label_sftp_server_ip";
-            this.label_sftp_server_ip.Size = new System.Drawing.Size(99, 19);
-            this.label_sftp_server_ip.TabIndex = 29;
-            this.label_sftp_server_ip.Text = "SFTP Server IP:";
+            this.label_tftp_server_ip.AutoSize = true;
+            this.label_tftp_server_ip.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label_tftp_server_ip.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.label_tftp_server_ip.Location = new System.Drawing.Point(20, 60);
+            this.label_tftp_server_ip.Name = "label_tftp_server_ip";
+            this.label_tftp_server_ip.Size = new System.Drawing.Size(99, 19);
+            this.label_tftp_server_ip.TabIndex = 29;
+            this.label_tftp_server_ip.Text = "TFTP Server IP:";
             // 
             // textBox_friendlyName
             // 
@@ -314,7 +314,6 @@
             this.textBox_remotedir.Name = "textBox_remotedir";
             this.textBox_remotedir.Size = new System.Drawing.Size(120, 25);
             this.textBox_remotedir.TabIndex = 6;
-            this.textBox_remotedir.TextChanged += new System.EventHandler(this.textBox_remotedir_TextChanged);
             // 
             // label_remotedir
             // 
@@ -347,7 +346,7 @@
             this.label_testing.Size = new System.Drawing.Size(0, 17);
             this.label_testing.TabIndex = 52;
             // 
-            // SFTP_FolderPairFRM
+            // TFTP_FolderPairFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -375,18 +374,17 @@
             this.Controls.Add(this.button_destination);
             this.Controls.Add(this.label_destination);
             this.Controls.Add(this.textBox_ip);
-            this.Controls.Add(this.label_sftp_server_ip);
+            this.Controls.Add(this.label_tftp_server_ip);
             this.Controls.Add(this.textBox_friendlyName);
             this.Controls.Add(this.label_fn);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.MidnightBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "SFTP_FolderPairFRM";
+            this.Name = "TFTP_FolderPairFRM";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SFTP FolderPair";
-            this.Load += new System.EventHandler(this.SFTP_FolderPairFRM_Load);
+            this.Text = "TFTP FolderPair";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_port)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -409,7 +407,7 @@
         private System.Windows.Forms.Button button_destination;
         private System.Windows.Forms.Label label_destination;
         private System.Windows.Forms.TextBox textBox_ip;
-        private System.Windows.Forms.Label label_sftp_server_ip;
+        private System.Windows.Forms.Label label_tftp_server_ip;
         private System.Windows.Forms.TextBox textBox_friendlyName;
         private System.Windows.Forms.Label label_fn;
         private System.Windows.Forms.TextBox textBox_password;

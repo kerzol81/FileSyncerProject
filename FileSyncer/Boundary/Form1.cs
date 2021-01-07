@@ -25,36 +25,31 @@ namespace FileSyncer.Boundary
 
             ApplicationLogger.Logging_enabled = true;               
         }
-
-        
-
         private void Form1_Load(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Maximized;
             DBHandler.Connect();
             DynamicDataStore.LoadUsers();
             #region Login
-            var login = new LoginFRM();
-            if (login.ShowDialog() != DialogResult.OK)
-            {
-                Application.Exit();
-            }
-            else
-            {
-                SetControlsToUserLevel();
-                label_logged_in_username.Text =  DynamicDataStore.LoggedInUser.UserName;
-                if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[0])
-                {
-                    label_logged_in_username.ForeColor = Color.Red;
-                }
-                else
-                {
-                    label_logged_in_username.ForeColor = Color.Green;
-                }
-                label_logged_in_userLevel.Text = DynamicDataStore.LoggedInUser.UserLevel;
-                
-                
-            }         
+            //var login = new LoginFRM();
+            //if (login.ShowDialog() != DialogResult.OK)
+            //{
+            //    Application.Exit();
+            //}
+            //else
+            //{
+            //    SetControlsToUserLevel();
+            //    label_logged_in_username.Text =  DynamicDataStore.LoggedInUser.UserName;
+            //    if (DynamicDataStore.LoggedInUser.UserLevel == UserLevels.Levels[0])
+            //    {
+            //        label_logged_in_username.ForeColor = Color.Red;
+            //    }
+            //    else
+            //    {
+            //        label_logged_in_username.ForeColor = Color.Green;
+            //    }
+            //    label_logged_in_userLevel.Text = DynamicDataStore.LoggedInUser.UserLevel;
+            //}         
             #endregion  
             UpdateSMBLSTV();
             UpdateFTPLSTV();
@@ -122,8 +117,9 @@ namespace FileSyncer.Boundary
                 {
                     Syncroniser.FTP(item);
                     ApplicationLogger.AddLog($"{item.FriendlyName} synced to {item.DestinationFolder}");              
-                    System.Threading.Thread.Sleep(minute * 60 * 1000); 
+                    
                 }
+                System.Threading.Thread.Sleep(minute * 60 * 1000);
                 minute = Syncroniser.Ftp_minute;
             }
         }
@@ -136,11 +132,11 @@ namespace FileSyncer.Boundary
             {
                 foreach (var item in DynamicDataStore.SftpFolderPairs)
                 {
-                    Syncroniser.SFTP(item);
-                    ApplicationLogger.AddLog($"{item.FriendlyName} synced to {item.DestinationFolder}");
-                    System.Threading.Thread.Sleep(minute * 60 * 1000);
+                    Syncroniser.TFTP(item);
+                    ApplicationLogger.AddLog($"{item.FriendlyName} synced to {item.DestinationFolder}");              
                 }
-                minute = Syncroniser.Sftp_minute;
+                System.Threading.Thread.Sleep(minute * 60 * 1000);
+                minute = Syncroniser.Tftp_minute;
             }
         }
         #region ListView & Listbox Updates
@@ -344,7 +340,7 @@ namespace FileSyncer.Boundary
         #region SFTP section
         private void button_sftp_add_Click(object sender, EventArgs e)
         {
-            var frm = new SFTP_FolderPairFRM();
+            var frm = new TFTP_FolderPairFRM();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 UpdateSFTPLSTV();
@@ -420,7 +416,7 @@ namespace FileSyncer.Boundary
             }
             else
             {
-                var frm = new SFTP_FolderPairFRM(selected);
+                var frm = new TFTP_FolderPairFRM(selected);
                 if (frm.ShowDialog() == DialogResult.OK)
                 {
                     UpdateSFTPLSTV();

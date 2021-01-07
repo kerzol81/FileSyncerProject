@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using FileSyncer.Control;
 
@@ -45,6 +46,7 @@ namespace FileSyncer.Boundary
             {
                 if (smbFolderPair == null)
                 {
+                    SourceAndDestinationFolderCheck();
                     smbFolderPair = new SMBFolderPair(
                         textBox_friendlyName.Text,
                         folderBD_source.SelectedPath,
@@ -59,6 +61,7 @@ namespace FileSyncer.Boundary
                 }
                 else // mod
                 {
+                    
                     smbFolderPair.FriendlyName = textBox_friendlyName.Text;
                     smbFolderPair.SourceFolder = textBox_source.Text;
                     smbFolderPair.DestinationFolder = textBox_destination.Text;
@@ -76,6 +79,29 @@ namespace FileSyncer.Boundary
                 DialogResult = DialogResult.None;
             }           
         }
+
+        private void SourceAndDestinationFolderCheck()
+        {
+            //throw new NotImplementedException();
+            foreach (var item in DynamicDataStore.SmbFolderPairs)
+            {
+                if (item.SourceFolder == textBox_source.Text)
+                {
+                    StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
+                    //textBox_source.Clear();
+                    textBox_source.ForeColor = Color.Red;
+                    DialogResult = DialogResult.None;
+                }
+                if (item.DestinationFolder == textBox_destination.Text)
+                {
+                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
+                    //textBox_destination.Clear();
+                    textBox_destination.ForeColor = Color.Red;
+                    DialogResult = DialogResult.None;
+                }
+            }
+        }
+
         private void button_source_Click(object sender, EventArgs e)
         {
             if (folderBD_source.ShowDialog() == DialogResult.OK)
@@ -90,30 +116,30 @@ namespace FileSyncer.Boundary
                 textBox_destination.Text = folderBD_destination.SelectedPath;
             }
         }
-        private void textBox_source_TextChanged(object sender, EventArgs e)
-        {
-            foreach (var item in DynamicDataStore.SmbFolderPairs)
-            {
-                if (item.SourceFolder == textBox_source.Text)
-                {
-                    StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
-                    textBox_source.Clear();
-                    DialogResult = DialogResult.None;
-                }     
-            }
-        }
+        //private void textBox_source_TextChanged(object sender, EventArgs e)
+        //{
+        //    foreach (var item in DynamicDataStore.SmbFolderPairs)
+        //    {
+        //        if (item.SourceFolder == textBox_source.Text)
+        //        {
+        //            StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
+        //            textBox_source.Clear();
+        //            DialogResult = DialogResult.None;
+        //        }
+        //    }
+        //}
 
-        private void textBox_destination_TextChanged(object sender, EventArgs e)
-        {
-            foreach (var item in DynamicDataStore.SmbFolderPairs)
-            {
-                if (item.DestinationFolder == textBox_destination.Text)
-                {
-                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
-                    textBox_destination.Clear();
-                    DialogResult = DialogResult.None;
-                }
-            }
-        }
+        //private void textBox_destination_TextChanged(object sender, EventArgs e)
+        //{
+        //    foreach (var item in DynamicDataStore.SmbFolderPairs)
+        //    {
+        //        if (item.DestinationFolder == textBox_destination.Text)
+        //        {
+        //            StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
+        //            textBox_destination.Clear();
+        //            DialogResult = DialogResult.None;
+        //        }
+        //    }
+        //}
     }
 }

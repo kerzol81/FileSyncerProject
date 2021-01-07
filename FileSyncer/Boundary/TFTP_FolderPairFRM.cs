@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using FileSyncer.Control;
 using FileSyncer.Entity;
@@ -7,17 +8,17 @@ using WinSCP;
 
 namespace FileSyncer.Boundary
 {
-    public partial class SFTP_FolderPairFRM : Form
+    public partial class TFTP_FolderPairFRM : Form
     {
-        SFTPFolderPair sftp;
-        internal SFTPFolderPair Sftp { get => sftp; /*set => sftp = value;*/ }
+        TFTPFolderPair sftp;
+        internal TFTPFolderPair Sftp { get => sftp; /*set => sftp = value;*/ }
 
-        public SFTP_FolderPairFRM()
+        public TFTP_FolderPairFRM()
         {
             InitializeComponent();
         }
 
-        internal SFTP_FolderPairFRM(SFTPFolderPair mod):this()
+        internal TFTP_FolderPairFRM(TFTPFolderPair mod):this()
         {
             sftp = mod;
             textBox_friendlyName.Text = sftp.FriendlyName;
@@ -33,16 +34,7 @@ namespace FileSyncer.Boundary
             checkBox_deleteSourceFiles.Checked = sftp.DeleteSourceFiles;
             checkBox_enabled.Checked = sftp.Enabled;
         }
-
-        private void textBox_ip_MouseLeave(object sender, EventArgs e)
-        {
-            if (!Validator.IP(textBox_ip.Text))
-            {
-                StandardMessages.ShowMessageBox_InvalidIPAddress();
-                textBox_ip.Focus();
-            }
-        }
-
+  
         private void button_cancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -54,12 +46,18 @@ namespace FileSyncer.Boundary
             {
                 StandardMessages.ShowMessageBox_MissedSFTPServerTest();
             }
-
+            if (!Validator.IP(textBox_ip.Text))
+            {
+                StandardMessages.ShowMessageBox_InvalidIPAddress();
+                textBox_ip.Focus();
+                DialogResult = DialogResult.None;
+            }
+            SourceFolderDuplicationCheck();
             if (label_testing.Text == "OK" && !string.IsNullOrEmpty(textBox_destination.Text))
             {
                 if (sftp == null)
                 {
-                    sftp = new SFTPFolderPair(textBox_friendlyName.Text,
+                    sftp = new TFTPFolderPair(textBox_friendlyName.Text,
                         textBox_ip.Text,
                         (int)numericUpDown_port.Value,
                         textBox_username.Text,
@@ -96,6 +94,16 @@ namespace FileSyncer.Boundary
                 StandardMessages.ShowMessageBox_EmptyFieldsOnForm();
                 DialogResult = DialogResult.None;
             }        
+        }
+
+        private void SourceFolderDuplicationCheck()
+        {
+            //throw new NotImplementedException();
+            if (DynamicDataStore.SftpFolderPairs.Any(x => x.SharedFolder == textBox_remotedir.Text))
+            {
+                StandardMessages.ShowMessageBox_SharedFolderIsAlreadyUsed(textBox_remotedir.Text);
+                DialogResult = DialogResult.None;
+            }
         }
 
         private void button_destination_Click(object sender, EventArgs e)
@@ -151,7 +159,6 @@ namespace FileSyncer.Boundary
                 textBox_friendlyName.Focus();
             }          
         }
-
         private bool SFTPLoginOK()
         {
             SessionOptions sessionOptions = new SessionOptions
@@ -196,7 +203,6 @@ namespace FileSyncer.Boundary
                     label_testing.ForeColor = Color.Red;
                     label_testing.Text = "Folder error";
                 }
-
                 else
                 {
                     ApplicationLogger.AddLog($"{textBox_friendlyName.Text} session error: {ex}");
@@ -210,31 +216,6 @@ namespace FileSyncer.Boundary
         {
             textBox_friendlyName.Focus();
             checkBox_enabled.Checked = true;
-        }
-
-        private void textBox_remotedir_TextChanged(object sender, EventArgs e)
-        {
-            foreach (var item in DynamicDataStore.SftpFolderPairs)
-            {
-                if (item.DestinationFolder == textBox_destination.Text)
-                {
-                    StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
-                    textBox_remotedir.Clear();
-                    DialogResult = DialogResult.None;
-                }
-            }
-        }
-        private void textBox_destination_TextChanged(object sender, EventArgs e)
-        {
-            foreach (var item in DynamicDataStore.SftpFolderPairs)
-            {
-                if (item.DestinationFolder == textBox_destination.Text)
-                {
-                    StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
-                    textBox_destination.Clear();
-                    DialogResult = DialogResult.None;
-                }
-            }
         }
     }
 }

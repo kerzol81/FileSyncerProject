@@ -166,13 +166,20 @@ namespace FileSyncer
                     }
                 }
                 ApplicationLogger.AddLog($"{friendlyName} synced");
-                //ApplicationLogger.AddLog($"{e.Name} Moved in {friendlyName}");
             }
             else if (inBetweenSyncBoundary && enabled && deleteSourceFiles == false)
             {
-                File.Copy(e.FullPath, Path.Combine(destinationFolder, e.Name));
-                ApplicationLogger.AddLog($"{friendlyName} synced");
-                //ApplicationLogger.AddLog($"File Copied {friendlyName}");
+                // sometimes "File.beeing user by other process" error occurs
+                try
+                {
+                    File.Copy(e.FullPath, Path.Combine(destinationFolder, e.Name));
+                    ApplicationLogger.AddLog($"{friendlyName} synced");
+                    //ApplicationLogger.AddLog($"File Copied {friendlyName}");
+                }
+                catch (Exception)
+                {
+                 //   throw;
+                }               
             }
             else
             {

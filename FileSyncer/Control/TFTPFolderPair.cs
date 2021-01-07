@@ -2,7 +2,7 @@
 
 namespace FileSyncer.Control
 {
-    class SFTPFolderPair : ICSVFormat, IListViewRow
+    class TFTPFolderPair : ICSVFormat, IListViewRow
     {
         #region Fields
         int? id;
@@ -155,11 +155,11 @@ namespace FileSyncer.Control
         #endregion
 
         #region Constructors
-        public SFTPFolderPair()
+        public TFTPFolderPair()
         {
             // Exporter.cs and Dapper needs a parameterless constructor
         }
-        public SFTPFolderPair(string friendlyName, string iP, int port, string userName, string passWord, string sharedFolder, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled)
+        public TFTPFolderPair(string friendlyName, string iP, int port, string userName, string passWord, string sharedFolder, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled)
         {
           
             FriendlyName = friendlyName;
@@ -176,7 +176,7 @@ namespace FileSyncer.Control
             Enabled = enabled;
         }
 
-        public SFTPFolderPair(int? id, string friendlyName, string iP, int port, string userName, string passWord, string sharedFolder, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled):this(friendlyName, iP, port, userName, passWord, sharedFolder, destinationFolder, added, startSync, stopSync, deleteSourceFiles, enabled)
+        public TFTPFolderPair(int? id, string friendlyName, string iP, int port, string userName, string passWord, string sharedFolder, string destinationFolder, DateTime added, DateTime startSync, DateTime stopSync, bool deleteSourceFiles, bool enabled):this(friendlyName, iP, port, userName, passWord, sharedFolder, destinationFolder, added, startSync, stopSync, deleteSourceFiles, enabled)
         {
             Id = id;   
         }
