@@ -60,8 +60,7 @@ namespace FileSyncer.Boundary
                     DBHandler.InsertSMBFolderPair(smbFolderPair);
                 }
                 else // mod
-                {
-                    
+                {                   
                     smbFolderPair.FriendlyName = textBox_friendlyName.Text;
                     smbFolderPair.SourceFolder = textBox_source.Text;
                     smbFolderPair.DestinationFolder = textBox_destination.Text;
@@ -82,7 +81,6 @@ namespace FileSyncer.Boundary
 
         private void SourceAndDestinationFolderCheck()
         {
-            //throw new NotImplementedException();
             foreach (var item in DynamicDataStore.SmbFolderPairs)
             {
                 if (item.SourceFolder == textBox_source.Text)
@@ -116,30 +114,5 @@ namespace FileSyncer.Boundary
                 textBox_destination.Text = folderBD_destination.SelectedPath;
             }
         }
-        //private void textBox_source_TextChanged(object sender, EventArgs e)
-        //{
-        //    foreach (var item in DynamicDataStore.SmbFolderPairs)
-        //    {
-        //        if (item.SourceFolder == textBox_source.Text)
-        //        {
-        //            StandardMessages.ShowMessageBox_SourceFolderIsAlreadyUsed(item.Id.ToString());
-        //            textBox_source.Clear();
-        //            DialogResult = DialogResult.None;
-        //        }
-        //    }
-        //}
-
-        //private void textBox_destination_TextChanged(object sender, EventArgs e)
-        //{
-        //    foreach (var item in DynamicDataStore.SmbFolderPairs)
-        //    {
-        //        if (item.DestinationFolder == textBox_destination.Text)
-        //        {
-        //            StandardMessages.ShowMessageBox_DestinationFolderIsAlreadyUsed(item.Id.ToString());
-        //            textBox_destination.Clear();
-        //            DialogResult = DialogResult.None;
-        //        }
-        //    }
-        //}
     }
 }

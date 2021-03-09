@@ -10,8 +10,8 @@ namespace FileSyncer.Boundary
 {
     public partial class TFTP_FolderPairFRM : Form
     {
-        TFTPFolderPair sftp;
-        internal TFTPFolderPair Sftp { get => sftp; /*set => sftp = value;*/ }
+        TFTPFolderPair tftp;
+        internal TFTPFolderPair Sftp { get => tftp; /*set => sftp = value;*/ }
 
         public TFTP_FolderPairFRM()
         {
@@ -20,21 +20,20 @@ namespace FileSyncer.Boundary
 
         internal TFTP_FolderPairFRM(TFTPFolderPair mod):this()
         {
-            sftp = mod;
-            textBox_friendlyName.Text = sftp.FriendlyName;
-            textBox_ip.Text = sftp.IP;
-            numericUpDown_port.Value = sftp.Port;
-            textBox_username.Text = sftp.UserName;
-            textBox_password.Text = sftp.PassWord;
-            textBox_remotedir.Text = sftp.SharedFolder;
-            textBox_destination.Text = sftp.DestinationFolder;
-            sftp.Added = DateTime.Now;
-            dateTimePicker_start.Value = sftp.StartSync;
-            dateTimePicker_stop.Value = sftp.StartSync;
-            checkBox_deleteSourceFiles.Checked = sftp.DeleteSourceFiles;
-            checkBox_enabled.Checked = sftp.Enabled;
+            tftp = mod;
+            textBox_friendlyName.Text = tftp.FriendlyName;
+            textBox_ip.Text = tftp.IP;
+            numericUpDown_port.Value = tftp.Port;
+            textBox_username.Text = tftp.UserName;
+            textBox_password.Text = tftp.PassWord;
+            textBox_remotedir.Text = tftp.SharedFolder;
+            textBox_destination.Text = tftp.DestinationFolder;
+            tftp.Added = DateTime.Now;
+            dateTimePicker_start.Value = tftp.StartSync;
+            dateTimePicker_stop.Value = tftp.StartSync;
+            checkBox_deleteSourceFiles.Checked = tftp.DeleteSourceFiles;
+            checkBox_enabled.Checked = tftp.Enabled;
         }
-  
         private void button_cancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -42,6 +41,7 @@ namespace FileSyncer.Boundary
 
         private void button_ok_Click(object sender, EventArgs e)
         {
+            
             if (label_testing.Text != "OK")
             {
                 StandardMessages.ShowMessageBox_MissedSFTPServerTest();
@@ -52,12 +52,13 @@ namespace FileSyncer.Boundary
                 textBox_ip.Focus();
                 DialogResult = DialogResult.None;
             }
-            SourceFolderDuplicationCheck();
+            
             if (label_testing.Text == "OK" && !string.IsNullOrEmpty(textBox_destination.Text))
             {
-                if (sftp == null)
+                if (tftp == null)
                 {
-                    sftp = new TFTPFolderPair(textBox_friendlyName.Text,
+                    SourceFolderDuplicationCheck();
+                    tftp = new TFTPFolderPair(textBox_friendlyName.Text,
                         textBox_ip.Text,
                         (int)numericUpDown_port.Value,
                         textBox_username.Text,
@@ -70,23 +71,22 @@ namespace FileSyncer.Boundary
                         checkBox_deleteSourceFiles.Checked,
                         checkBox_enabled.Checked);
 
-                    DBHandler.InsertSFTPFolderPair(sftp);
+                    DBHandler.InsertSFTPFolderPair(tftp);
                 }
                 else
                 {
-                    sftp.FriendlyName = textBox_friendlyName.Text;
-                    sftp.IP = textBox_ip.Text;
-                    sftp.Port = (int)numericUpDown_port.Value;
-                    sftp.UserName = textBox_username.Text;
-                    sftp.PassWord = Xor.Encrypt(textBox_password.Text);
-                    sftp.SharedFolder = textBox_remotedir.Text;
-                    sftp.Added = DateTime.Now;
-                    sftp.StartSync = dateTimePicker_start.Value;
-                    sftp.StopSync = dateTimePicker_stop.Value;
-                    sftp.DeleteSourceFiles = checkBox_deleteSourceFiles.Checked;
-                    sftp.Enabled = checkBox_enabled.Checked;
-
-                    DBHandler.UpdateSFTPFolderPair(sftp);
+                    tftp.FriendlyName = textBox_friendlyName.Text;
+                    tftp.IP = textBox_ip.Text;
+                    tftp.Port = (int)numericUpDown_port.Value;
+                    tftp.UserName = textBox_username.Text;
+                    tftp.PassWord = Xor.Encrypt(textBox_password.Text);
+                    tftp.SharedFolder = textBox_remotedir.Text;
+                    tftp.Added = DateTime.Now;
+                    tftp.StartSync = dateTimePicker_start.Value;
+                    tftp.StopSync = dateTimePicker_stop.Value;
+                    tftp.DeleteSourceFiles = checkBox_deleteSourceFiles.Checked;
+                    tftp.Enabled = checkBox_enabled.Checked;
+                    DBHandler.UpdateTFTPFolderPair(tftp);
                 }
             }
             else
@@ -102,6 +102,7 @@ namespace FileSyncer.Boundary
             if (DynamicDataStore.SftpFolderPairs.Any(x => x.SharedFolder == textBox_remotedir.Text))
             {
                 StandardMessages.ShowMessageBox_SharedFolderIsAlreadyUsed(textBox_remotedir.Text);
+                label_testing.Text = "";
                 DialogResult = DialogResult.None;
             }
         }
@@ -123,7 +124,6 @@ namespace FileSyncer.Boundary
                 !string.IsNullOrEmpty(textBox_password.Text) &&
                 !string.IsNullOrEmpty(textBox_remotedir.Text))
             {
-                label_testing.Text = "";
                 label_testing.ForeColor = Color.Green;
                 label_testing.Text = "Testing...";
                 label_testing.ForeColor = Color.Green;

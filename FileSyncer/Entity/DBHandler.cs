@@ -233,7 +233,7 @@ namespace FileSyncer
                 throw new DBHandlerExeption(message, ex);
             }
         }
-        internal static void UpdateSFTPFolderPair(TFTPFolderPair _mod)
+        internal static void UpdateTFTPFolderPair(TFTPFolderPair _mod)
         {
             try
             {

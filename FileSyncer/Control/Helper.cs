@@ -80,6 +80,6 @@ namespace FileSyncer.Control
             return Sb.ToString();
         }
 
-        #endregion  
+        #endregion       
     }
 }

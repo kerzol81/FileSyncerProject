@@ -46,7 +46,7 @@ namespace FileSyncer.Entity
                 }
                 catch (Exception)
                 {
-                    ApplicationLogger.AddLog($"Error while FTP syncing {f.FriendlyName}");
+                    ApplicationLogger.AddLog($"Error while FTP syncing: {f.FriendlyName}");
                 }
             }
             else

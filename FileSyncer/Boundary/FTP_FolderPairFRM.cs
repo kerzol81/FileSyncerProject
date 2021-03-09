@@ -33,16 +33,16 @@ namespace FileSyncer.Boundary
             checkBox_deleteSourceFiles.Checked = ftpFolderPair.DeleteSourceFiles;
         }
         private void button_ok_Click(object sender, EventArgs e)
-        {
-            
+        {       
             if (label_testing.Text != "OK")
             {
                 StandardMessages.ShowMessageBox_MissedFTPServerTest();
                 DialogResult = DialogResult.None;
             }
-            SourceFolderDuplicationCheck();
+            
             if (ftpFolderPair == null) // new
-            {   
+            {
+                SourceFolderDuplicationCheck();
                 ftpFolderPair = new FTPFolderPair(
                             textBox_friendlyName.Text,
                             textBox_ip.Text,
@@ -60,8 +60,7 @@ namespace FileSyncer.Boundary
                 DBHandler.InsertFTPFolderPair(ftpFolderPair);
             }
             else // mod
-            {
-                
+            {      
                 ftpFolderPair.FriendlyName = textBox_friendlyName.Text;
                 ftpFolderPair.SourceIP = textBox_ip.Text;
                 ftpFolderPair.Port = (int)numericUpDown_port.Value;
@@ -82,10 +81,10 @@ namespace FileSyncer.Boundary
             if (DynamicDataStore.FtpFolderPairs.Any(x => x.SharedFolder == textBox_shared.Text))
             {
                 StandardMessages.ShowMessageBox_SharedFolderIsAlreadyUsed(textBox_shared.Text);
+                label_testing.Text = "";
                 DialogResult = DialogResult.None;
             }
         }
-
         private void button_destination_Click(object sender, EventArgs e)
         {
             var fbd = new FolderBrowserDialog();

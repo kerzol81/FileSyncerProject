@@ -80,10 +80,10 @@ namespace FileSyncer.Boundary
             return MessageBox.Show($"Select a User!", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        internal static void ShowMessageBox_SharedFolderIsAlreadyUsed(string id)
+        internal static void ShowMessageBox_SharedFolderIsAlreadyUsed(string shared)
         {
             //throw new NotImplementedException();
-            MessageBox.Show($"The Shared Folder is already used in \nID:{id}", "Source Folder Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show($"The Shared Folder: {shared} has been set in sync job already, select another one!", "Source Folder Duplicate", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         internal static void ShowMessageBox_SourceFolderIsAlreadyUsed(string id)

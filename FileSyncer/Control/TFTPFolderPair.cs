@@ -128,8 +128,7 @@ namespace FileSyncer.Control
                     sharedFolder = value;
                 }
             }
-        }
-        
+        }      
         public string DestinationFolder
         {
             get => destinationFolder;
